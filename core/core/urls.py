@@ -15,13 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/',include('register.urls'))
+    path('', include('homepage.urls')),
+    path('haqqimizda/', include('aboutpage.urls')),
+    path('contact/', include('contactpage.urls')),
+    path('news/', include('newspage.urls')),
+    path('services/', include('servicepage.urls')),
+    path('clients/',include('ourclientpage.urls'))
 ]
+
+urlpatterns += i18n_patterns(
+    
+)
 
 
 urlpatterns += static(settings.STATIC_URL,

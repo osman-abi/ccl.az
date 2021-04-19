@@ -1,0 +1,43 @@
+.wm-color-four,
+.wm-colorhover-four:hover,
+.wm-fancytitle-four h2,
+.wm-plan-service h2 a,
+.wm-plan-service p,
+.admin-infotext p,
+.latest-case-text h5 a,
+.latest-case-text .wm-arrow-btn,
+.wm-counter-two h5,
+.wm-testimonial-grid h2 a,
+.wm-testimonial-grid p,
+.wm-testimonial-grid h5 a,
+.wm-fancytitle-four p,
+.wm-gridtwo-text p,
+.wm-subscribe-form input[type=submit],
+.widget-title-three h2,
+.widget_location p,
+.widget_infolink ul li a,
+.widget_infolink ul li a:before,
+.wm-header-four .wm-megamenu li h4,
+.wm-header-four .wm-megalist li:hover a,
+.wm-header-four .wm-dropdown-menu>li:hover>a,
+.wm-header-four .navbar-nav>li:hover>a,
+.wm-header-four .wm-cart-box h2,
+.wm-header-four .wm-cartbox-price {
+    color: #3e5062
+}
+
+.wm-bgcolor-four,
+.wm-bgcolorhover-four:hover,
+.wm-fulldark-transparent,
+.wm-bloggrid-two figure a:before,
+.wm-bloggrid-two figure a:after,
+.wm-bloggrid-two ul li:hover .wm-morearrow-btn,
+.wm-clientsays figure:hover figcaption:before,
+.wm-header-four .wm-cartbox-btn:hover {
+    background-color: #3e5062
+}
+
+.wm-bordercolor-four,
+.wm-bordercolorhover-four:hover {
+    border-color: #3e5062
+}

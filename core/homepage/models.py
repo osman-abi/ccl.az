@@ -6,6 +6,7 @@ from django.db import models
 
 class Logo(models.Model):
     image = models.ImageField(upload_to='logo/')
+    context = models.TextField(blank=True,null=True, verbose_name='qisa mezmun')
     class Meta:
         verbose_name_plural = 'Logo'
     def __str__(self):
@@ -16,6 +17,7 @@ class Logo(models.Model):
 class Slide(models.Model):
     image = models.ImageField(
         upload_to='slides/', blank=True, verbose_name='Slayd şəkli')
+    context = models.TextField(blank=True,null=True,verbose_name="Slayd mətni")
     button_name = models.CharField(max_length=100, blank=True, verbose_name='Linkin adı')
     button_link = models.URLField(verbose_name='Link')
     class Meta:
@@ -24,3 +26,19 @@ class Slide(models.Model):
         return self.image.url
 
    
+class Support(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.CharField(max_length=500)
+    context = models.TextField(blank=True, null=True)
+    image = models.ImageField(upload_to='support/')
+
+    def __str__(self):
+        return self.title
+
+
+class Statistica(models.Model):
+    count = models.IntegerField(blank=True, null=True)
+    title = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title

@@ -1,0 +1,23 @@
+.wm-color-two,
+.wm-colorhover-two:hover,
+.wm-header-two .navbar-default .navbar-nav>li:hover>a {
+    color: #f8f0a2
+}
+
+.wm-bgcolor-two,
+.wm-bgcolorhover-two:hover,
+.wm-service-modern ul li:hover span,
+.widget_gallerytwo ul li a:before {
+    background-color: #f8f0a2
+}
+
+.wm-bordercolor-two,
+.wm-bordercolorhover-two:hover {
+    border-color: #f8f0a2
+}
+
+.wm-header-two .wm-megamenu li h4,
+.wm-header-two .wm-megalist li:hover a,
+.wm-header-two .wm-dropdown-menu>li:hover>a {
+    color: #57282e
+}

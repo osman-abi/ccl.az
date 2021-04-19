@@ -38,14 +38,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'register',
     'homepage',
-    'contactpage'
+    'contactpage',
+    'aboutpage',
+    'newspage',
+    'ourclientpage',
+    'servicepage'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -58,7 +62,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +70,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'contactpage.context_processors.contact',
+                'homepage.context_processors.logo',
+                'servicepage.context_processors.service',
+                'newspage.context_processors.news'
             ],
         },
     },
@@ -110,8 +118,17 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
+from django.utils.translation import gettext_lazy as _
 
 LANGUAGE_CODE = 'en-us'
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('ru', _('Russian')),
+    ('az',_('Azerbaijani')),
+)
+
+LOCALE_PATH = [os.path.join(BASE_DIR,'locale/')]
 
 TIME_ZONE = 'UTC'
 
@@ -133,8 +150,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/assets')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/snippet')
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/')
 ]
+

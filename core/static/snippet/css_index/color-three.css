@@ -1,0 +1,27 @@
+.wm-color-three,
+.wm-colorhover-three:hover,
+.wm-modren-btn.wm-change-color,
+.widget_aboutlinks ul li:hover a,
+.wm-footer-icons li:hover a,
+.wm-header-three .wm-megamenu li h4,
+.wm-header-three .wm-megalist li:hover a,
+.wm-header-three .wm-dropdown-menu > li:hover > a {
+  color: #e99234;
+}
+.wm-bgcolor-three,
+.wm-bgcolorhover-three:hover,
+.wm-banner-three-caption a:before,
+.wm-readmore:before,
+.wm-readmore:hover,
+ul li:hover .wm-readmore,
+.wm-transparent-color,
+.wm-modren-btn.wm-change-color:before,
+.wm-featured-cases-grid figure:hover figcaption:before,
+.wm-latest-news figure figcaption:before,
+.wm-gallery-hover:before {
+  background-color: #e99234;
+}
+.wm-bordercolor-three,
+.wm-bordercolorhover-three:hover {
+  border-color: #e99234;
+}

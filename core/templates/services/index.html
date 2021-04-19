@@ -1,0 +1,559 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Our Clients</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <link href="{% static 'snippet/css_services/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/flaticon.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/slick-slider.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/prettyphoto.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/mediaelementplayer.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/color.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/color-two.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/color-three.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/color-four.css' %}" rel="stylesheet" />
+    <link href="{% static 'snippet/css_services/responsive.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <div class="wm-main-wrapper">
+        <header id="wm-header" class="wm-header-one">
+
+            <div class="wm-topsection">
+            <div class="container">
+            <div class="row">
+              {% for logo in logos %}
+              <div class="col-md-3"><a href="#" class="wm-logo"><img src="{{logo.image.url}}" alt=""></a></div>
+              {% endfor %}
+              <div class="col-md-9">
+                <ul class="wm-topinfo">
+                  {% for contact in contacts %}
+                  <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
+                  <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
+                  {% endfor %}
+                  <li><i class="flaticon-nation"></i> <a href="#">English <i class="fa fa-angle-down"></i></a>
+                    <ul class="wm-language-popup">
+            
+                      <li><a href="#">Azerbaijani</a></li>
+                      <li><a href="#">Russian</a></li>
+            </ul>
+            </li>
+            </ul>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+            
+            <div class="wm-navsection">
+            <div class="container">
+            <div class="row">
+            <div class="col-md-12">
+            <div class="wm-navinner-section">
+            
+            <nav class="navbar navbar-default">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            
+            <ul class="nav navbar-nav">
+            
+              <li class="menu-item active"><a href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="menu-item"><a href="{% url 'services' %}">Services</a>
+              </li>
+              <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
+              </li>
+              <li class="menu-item"><a href="{% url 'about' %}">About</a>
+              </li>
+              <li class="menu-item"><a href="{% url 'blogs' %}">News</a>
+              </li>
+              <li class="menu-item"><a href="{% url 'contact' %}">Contact</a>
+              </li>
+            
+            </ul>
+            </div>
+            </nav>
+            
+            
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            
+            </header>
+
+      <div class="wm-mini-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="wm-breadcrumb">
+                <ul>
+                  <li><a href="//127.0.0.1:5500/index.html">Home</a></li>
+                  <li>Our Services</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wm-main-content">
+        <div class="wm-main-section">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="wm-section-title">
+                  <h2>Complete solutions from A to Z</h2>
+                </div>
+                <div class="wm-services-listing">
+                  <ul class="row">
+                    {% for service in services %}
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="{% url 'service_detail' service.id %}"
+                          ><img src="{{service.image.url}}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="{% url 'service_detail' service.id %}"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="s{% url 'service_detail' service.id %}"
+                          >{{service.title}}</a
+                        >
+                        <p>
+                          {{service.description}}
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="{% url 'service_detail' service.id %}"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                      
+                    {% endfor %}
+                    
+                    
+                    
+                    <!-- <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services2.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >Integrated solutions</a
+                        >
+                        <p>
+                          We help our customers to solve their data needs by
+                          developing all comprehensive systems
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services3.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >Information Systems</a
+                        >
+                        <p>
+                          Robust, highly scalable, easy to deploy, and adaptable
+                          to any of the environment.
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services4.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >Training & Coaching</a
+                        >
+                        <p>
+                          We offer training and competence development services
+                          on the topics of our expertise.
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services5.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >Support FAME</a
+                        >
+                        <p>
+                          A full range of services to institution in virtually
+                          every segment of the information management.
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services6.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >SAS support</a
+                        >
+                        <p>
+                          Data architecture and optimization, information
+                          management, all of the systems prepared.
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services7.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >Cloud computing</a
+                        >
+                        <p>
+                          Beyond a trend, cloud computing is a new work form
+                          that allows companies have further control.
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services8.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >Open Government</a
+                        >
+                        <p>
+                          This allows moving forward with responsibility,
+                          efficiency, austerity, demands and quality criteria.
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li>
+                    <li class="col-md-4">
+                      <figure>
+                        <a href="service_template.html"
+                          ><img src="{% static 'snippet/img_services/our-services9.jpg' %}" alt=""
+                        /></a>
+                        <a class="wm-icon" href="service_template.html"
+                          ><i class="flaticon-interface-2"></i
+                        ></a>
+                      </figure>
+                      <div class="wm-services-text">
+                        <a
+                          class="wm-title-services"
+                          href="service-single-post.html"
+                          >Customer Experience</a
+                        >
+                        <p>
+                          In customer experience, we help our clients in making
+                          their clients feel. We try to answer this question.
+                        </p>
+                        <a
+                          class="wm-readmore-icon"
+                          href="service-single-post.html"
+                        >
+                          Read More
+                          <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a>
+                      </div>
+                    </li> -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer id="wm-footer" class="wm-footer-one">
+
+        <div class="wm-footer-topsec">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-6">
+        <div class="wm-newslatter">
+        <div class="wm-footer-title">
+        <h4>01</h4>
+        <h2>Newsletter</h2>
+        </div>
+        <p>Be the first to subscribe to our newsletter and get latest news from Advisor.</p>
+        <form action="{% url 'subscribe' %}" method="POST">
+          {% csrf_token %}
+          <input type="text" value="E-mail Address" name='email'
+            onblur="if(this.value == '') { this.value ='E-mail Address'; }"
+            onfocus="if(this.value =='E-mail Address') { this.value = ''; }">
+          <div class="clearfix"></div>
+          <label><input type="submit" value="Subscribe"></label>
+        </form>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="wm-footer-contactinfo">
+        <div class="wm-footer-title">
+        <h4>02</h4>
+        <h2>Contact Info</h2>
+        </div>
+        <ul>
+        {% for contact in contacts %}
+        <li>E-mail: <span class="__cf_email__">{{contact.email}}</span></li>
+        <li>Phone: <span>{{contact.phone_number}}</span></li>
+        <li>Address: <span class="__cf_email__">{{contact.address}}</span></li>
+        
+        {% endfor %}
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        
+        <div class="wm-footer-bottomsec">
+        <span class="wm-footer-transparent"></span>
+        <div class="container">
+        <div class="row">
+        <div class="col-md-7">
+        <div class="wm-footer-widget-area">
+        <div class="row">
+        <div class="col-md-8 widget wm_about_widget">
+          {% for logo in logos %}
+          <a href="{% url 'home' %}" class="wm-footer-logo"><img src="{{logo.image.url}}" alt=""></a>
+          <p>{{logo.context}}</p>
+          
+          {% endfor %}
+        
+          <ul class="wm-social-links">
+            {% for facebook in facebooks %}
+            <li><a href="{{facebook.facebook_link}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            {% endfor %}
+          
+            {% for instagram in instagrams %}
+            <li><a href="{{instagram.instagram_link}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            {% endfor %}
+          
+            {% for whatsapp in whatsapps %}
+            <li><a href="{{whatsapp.whatsapp_link}}" target="_blank"><i class="fab fa-whatsapp"></i> Whasapp</a></li>
+            {% endfor %}
+          
+            {% for linkedin in linkedins %}
+            <li><a href="{{linkedin.linkedin_link}}" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+            {% endfor %}
+          
+          
+          </ul>
+        </div>
+        <div class="col-md-4 widget widget_archive">
+        <div class="wm-footer-widgettitle"> <h2>Useful Links</h2> </div>
+        <ul>
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'services' %}">Services</a></li>
+          <li><a href="{% url 'clients' %}">Our Clients</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'blogs' %}">News</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-5">
+        <div class="wm-footer-form">
+        <div class="wm-footer-widgettitle"> <h2>Contact Us</h2> </div>
+        <form action="{% url 'contact_us' %}" method="POST">
+          {% csrf_token %}
+        <ul>
+        <li><input type="text" value="Your Name" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+        <li><input type="text" value="Your Email" onblur="if(this.value == '') { this.value ='Your Email'; }" onfocus="if(this.value =='Your Email') { this.value = ''; }"></li>
+        <li><input type="text" value="Your Phone" onblur="if(this.value == '') { this.value ='Your Phone'; }" onfocus="if(this.value =='Your Phone') { this.value = ''; }"></li>
+        <li><textarea placeholder="Your Message"></textarea></li>
+        <li><label><input type="submit" value="Send Now"></label></li>
+        </ul>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        
+        <div class="wm-copyright-section">
+        <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+        <p>© 2021, All Right Reserved - by <a href="#" class="wm-color">Company</a></p>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+        </footer>
+
+      <div class="clearfix"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+      integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script> -->
+    <!-- <script type="text/javascript" src="{% static 'snippet/js_services/jquery.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'snippet/js_services/modernizr.js' %}"></script>
+    <!-- <script type="text/javascript" src="{% static 'snippet/js_services/bootstrap.min.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'snippet/js_services/jquery.prettyphoto.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'snippet/js_services/jquery.countdown.min.js'%}"
+    ></script>
+    <script type="text/javascript" src="{% static 'snippet/js_services/fitvideo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'snippet/js_services/skills.js' %}"></script>
+    <script type="text/javascript" src="{% static 'snippet/js_services/slick.slider.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'snippet/js_services/waypoints-min.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'snippet/js_services/mediaelement-and-player.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'snippet/js_services/jquery.nicescroll.min.js' %}"
+    ></script>
+    <!-- <script type="text/javascript" src="{% static 'snippet/js_services/jquery-ui.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'snippet/js_services/isotope.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'snippet/js_services/functions.js' %}"></script>
+  </body>
+</html>

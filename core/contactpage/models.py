@@ -24,6 +24,19 @@ class ContactUs(models.Model):
     def __str__(self):
         return self.username
 
+class ChooseUs(models.Model):
+    context = models.TextField(blank=True,null=True,verbose_name="Niyə bizi seçmələri üçün səbəb")
+    class Meta:
+        verbose_name_plural = 'Niyə biz'
+    def __str__(self):
+        return self.context
+
+class SubscribedUsers(models.Model):
+    email = models.EmailField()
+    class Meta:
+        verbose_name_plural = 'Yeniliklerden xeberdar olmaq isteyenler'
+    def __str__(self):
+        return self.email
 
 """ SOCIAL LINKS """
 
@@ -33,3 +46,32 @@ class Facebook(models.Model):
         verbose_name_plural = 'Facebook Link'
     def __str__(self):
         return self.facebook_link
+
+class Instagram(models.Model):
+    instagram_link = models.URLField(verbose_name="instagram linki")
+
+    class Meta:
+        verbose_name_plural = 'Instagram Link'
+
+    def __str__(self):
+        return self.instagram_link
+
+
+class LinkedIn(models.Model):
+    linkedin_link = models.URLField(verbose_name="LinkedIn linki")
+
+    class Meta:
+        verbose_name_plural = 'LinkedIn Link'
+
+    def __str__(self):
+        return self.linkedin_link
+
+
+class Whatsapp(models.Model):
+    whatsapp_link = models.URLField(verbose_name="whatsapp linki")
+
+    class Meta:
+        verbose_name_plural = 'Whatsapp Link'
+
+    def __str__(self):
+        return self.whatsapp_link

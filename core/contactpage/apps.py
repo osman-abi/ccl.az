@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ContactpageConfig(AppConfig):
-    name = 'contactpage'
+class AccountConfig(AppConfig):
+    name = 'account'

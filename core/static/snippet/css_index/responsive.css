@@ -1,0 +1,1069 @@
+@media (min-width: 768px) and (max-width: 990px) {
+  .navbar {
+    position: relative;
+  }
+  .navbar-toggle {
+    display: block;
+    background-color: #eee;
+    margin: 14px 14px 14px 0;
+  }
+  .navbar-collapse {
+    padding: 0;
+    width: 260px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: absolute;
+    left: -100%;
+    top: 100%;
+    z-index: 9999;
+    margin: 10px 0 0 -60px;
+  }
+  .collapse {
+    display: none;
+  }
+  .navbar-nav > li:first-child > a {
+    padding-left: 22px;
+  }
+  .navbar-nav {
+    margin: 0;
+  }
+  .wm-dropdown-menu {
+    float: left;
+    width: 100%;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+  }
+  .wm-dropdown-menu,
+  .wm-megamenu {
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -ms-transform: translate(0px);
+    -o-transform: translate(0px);
+    transform: translate(0px);
+  }
+  .wm-megamenu {
+    float: left;
+    min-width: 100%;
+    position: relative;
+    right: auto;
+    top: auto;
+    padding: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  .wm-megamenu [class*="col-md-"] {
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+  }
+  .wm-megamenu .row {
+    margin: 0;
+  }
+  .navbar-nav > li > a {
+    float: left;
+    width: 100%;
+  }
+  .navbar-nav > li {
+    width: 100%;
+  }
+  .wm-topsection {
+    text-align: center;
+    padding-bottom: 35px;
+  }
+  .wm-topsection [class*="col-md-"],
+  .wm-topinfo,
+  .wm-toplocation {
+    display: inline-block;
+    float: none;
+  }
+  .wm-toplocation a {
+    display: inline-block;
+  }
+  .wm-navicons {
+    padding-left: 0;
+  }
+  .wm-header-two {
+    z-index: 99;
+  }
+  .wm-header-two > .container .col-md-3 {
+    float: left;
+  }
+  .wm-header-two > .container .col-md-9 {
+    float: right;
+  }
+  .wm-header-button {
+    background-color: transparent;
+    margin: 60px 0 0;
+  }
+  .wm-main-header {
+    text-align: center;
+    top: -500px;
+  }
+  .wm-main-header [class*="col-md-"] {
+    display: inline-block;
+  }
+  .wm-infolist > li {
+    float: none;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .wm-main-header .wm-section-spacer .wm-right-section,
+  .wm-header-two .wm-logo {
+    float: none;
+    display: inline-block;
+    position: relative;
+  }
+  .wm-main-header .wm-header-button {
+    top: auto;
+    bottom: 30%;
+  }
+  .wm-topstrip {
+    text-align: center;
+    padding: 15px 0;
+  }
+  .wm-topstrip [class*="col-md-"],
+  .wm-main-strip [class*="col-md-"] {
+    float: left;
+    width: 100%;
+    margin: 0;
+  }
+  .wm-main-strip {
+    text-align: center;
+    padding-bottom: 18px;
+  }
+  .wm-header-three .wm-logo,
+  .wm-header-three .wm-right-section {
+    float: none;
+    display: inline-block;
+  }
+  .wm-header-three .wm-search {
+    padding: 20px 12px 0 10px;
+    position: relative;
+  }
+  .wm-header-icons {
+    padding: 17px 0 0;
+  }
+  .wm-header-three .navbar-nav > li > a {
+    padding: 30px 0 10px;
+    color: #6c8391;
+  }
+  .wm-header-three .navbar-nav > li:hover > a {
+    color: #f2a450;
+  }
+  .wm-header-three .navbar-nav > li > a:before {
+    display: none;
+  }
+  .wm-headerstrip,
+  .wm-mainnav-section {
+    text-align: center;
+  }
+  .wm-headerstrip [class*="col-md-"],
+  .wm-mainnav-section [class*="col-md-"] {
+    float: left;
+    width: 100%;
+  }
+  .wm-cartsection,
+  .wm-header-four .wm-logo,
+  .wm-mainnav-section .wm-right-section {
+    float: none;
+    display: inline-block;
+    position: relative;
+  }
+  .wm-banner-nav {
+    height: 260px;
+  }
+  .wm-banner-caption h1 {
+    font-size: 40px;
+  }
+  .wm-caption-two {
+    margin-top: -25px;
+  }
+  .wm-caption-two h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .wm-caption-two h2 {
+    margin-bottom: 40px;
+    width: 100%;
+  }
+  .wm-service-list {
+    position: static;
+    float: left;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+  }
+  .wm-main-banner .wm-service-container {
+    float: left;
+    width: 100%;
+  }
+  .wm-caption-two a {
+    display: none;
+  }
+  .bannerfour-caption h1 {
+    font-size: 20px;
+  }
+  .bannerfour-caption p {
+    display: none;
+  }
+  .col-md-4,
+  .col-md-3,
+  .wm-service > ul > li.col-md-6 {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: -4px;
+    width: 50%;
+  }
+  .col-md-7,
+  .col-md-5,
+  .col-md-6 {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+  }
+  .col-md-12,
+  .wm-video-section {
+    float: left;
+    width: 100%;
+  }
+  .wm-counter-list ul li {
+    width: 50%;
+  }
+  .wm-testimonial-section,
+  .wm-map-description-inner,
+  .wm-footer-contactinfo {
+    width: 100%;
+  }
+  .wm-viewall-testimonial {
+    border-radius: 20px 20px 0 0;
+    right: 0;
+    top: -28px;
+  }
+  .wm-topspacer {
+    padding-top: 0;
+  }
+  .wm-experience-counter ul li:before {
+    display: none;
+  }
+  .wm-logobox ul li {
+    width: 33.333%;
+  }
+  .wm-featured-cases-grid ul li {
+    float: left;
+  }
+  .wm-clientsays ul li {
+    width: 100%;
+  }
+  .wm-service-counter .wm-counter-list ul li {
+    width: 50%;
+  }
+  .wm-coming-soon-bottom {
+    position: static;
+    float: left;
+    text-align: center;
+  }
+  .wm-coming-soon-top {
+    padding-bottom: 25px;
+  }
+  .wm-coming-soon-topinfo li {
+    float: none;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .wm-recent-member-grid li {
+    margin-bottom: 30px;
+  }
+  .wm-testimonails-info h2 {
+    font-size: 18px;
+  }
+  a.testimonails-email {
+    float: left;
+    margin-bottom: 15px;
+  }
+  .wm-icon-list-style {
+    margin-bottom: 20px;
+  }
+  .wm-footer-topsec:before {
+    width: 100%;
+    height: 50%;
+  }
+  .wm-newslatter {
+    margin-bottom: 100px;
+  }
+  .wm-footer-bottomsec:before {
+    left: 0%;
+    margin-left: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 45%;
+  }
+  .wm-footer-widget-area {
+    padding: 0 0 90px;
+  }
+  .wm-footer-widget .widget {
+    float: none;
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+  }
+  .wm-footer-information ul li {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .navbar {
+    position: relative;
+  }
+  .navbar-toggle {
+    display: block;
+    background-color: #eee;
+    margin: 14px 14px 14px 0;
+  }
+  .navbar-collapse {
+    padding: 0;
+    width: 220px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    z-index: 9999;
+    margin: 10px 0 0 -60px;
+  }
+  .collapse {
+    display: none;
+  }
+  .navbar-nav > li:first-child > a {
+    padding-left: 22px;
+  }
+  .navbar-nav {
+    margin: 0;
+  }
+  .wm-dropdown-menu {
+    float: left;
+    width: 100%;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+  }
+  .wm-dropdown-menu,
+  .wm-megamenu {
+    -webkit-transform: translate(0px);
+    -moz-transform: translate(0px);
+    -ms-transform: translate(0px);
+    -o-transform: translate(0px);
+    transform: translate(0px);
+  }
+  .wm-megamenu {
+    float: left;
+    min-width: 100%;
+    position: relative;
+    right: auto;
+    top: auto;
+    padding: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+  }
+  .wm-megamenu [class*="col-md-"] {
+    width: 100%;
+    float: left;
+    margin-bottom: 15px;
+  }
+  .wm-megamenu .row {
+    margin: 0;
+  }
+  .navbar-nav > li > a {
+    float: left;
+    width: 100%;
+  }
+  .navbar-nav > li {
+    width: 100%;
+  }
+  .wm-topsection {
+    text-align: center;
+    padding-bottom: 35px;
+  }
+  .wm-topsection [class*="col-md-"],
+  .wm-topinfo,
+  .wm-toplocation,
+  .wm-topinfo li {
+    display: inline-block;
+    float: none;
+  }
+  .wm-toplocation a {
+    display: inline-block;
+  }
+  .wm-navicons {
+    padding-left: 0;
+  }
+  .wm-topinfo li {
+    margin-bottom: 14px;
+  }
+  .wm-cart-box {
+    width: 220px;
+    right: 60px;
+    padding: 25px;
+  }
+  .wm-cart-box ul li figure {
+    width: 100%;
+  }
+  .wm-cart-box ul li figure ~ .wm-cartbox-text {
+    padding-left: 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-search-popup {
+    right: -80px;
+    width: 220px;
+  }
+  .wm-header-two {
+    position: relative;
+    float: left;
+    width: 100%;
+    background-color: #724c4e;
+    z-index: 99;
+  }
+  .wm-header-two > .container {
+    text-align: center;
+  }
+  .wm-header-two > .container .col-md-3,
+  .wm-header-two > .container .col-md-9 {
+    float: left;
+    width: 100%;
+  }
+  .wm-header-button {
+    background-color: transparent;
+    margin: 10px 0 30px;
+    float: none;
+    display: inline-block;
+  }
+  .wm-main-header {
+    text-align: center;
+  }
+  .wm-main-header [class*="col-md-"] {
+    display: inline-block;
+  }
+  .wm-infolist > li {
+    float: none;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .wm-language-popup {
+    left: auto;
+    right: 14px;
+  }
+  .wm-main-header .wm-section-spacer .wm-right-section,
+  .wm-header-two .wm-logo {
+    float: none;
+    display: inline-block;
+    position: relative;
+  }
+  .wm-main-header .wm-header-button {
+    top: auto;
+    bottom: 0%;
+  }
+  .wm-section-spacer {
+    padding-right: 0;
+  }
+  .wm-topstrip {
+    text-align: center;
+    padding: 15px 0;
+  }
+  .wm-topstrip [class*="col-md-"],
+  .wm-main-strip [class*="col-md-"] {
+    float: left;
+    width: 100%;
+    margin: 0;
+  }
+  .wm-main-strip {
+    text-align: center;
+    padding-bottom: 18px;
+  }
+  .wm-header-three .wm-logo,
+  .wm-header-three .wm-right-section {
+    float: none;
+    display: inline-block;
+  }
+  .wm-header-three .wm-search {
+    padding: 20px 12px 0 10px;
+    position: relative;
+  }
+  .wm-header-icons {
+    padding: 17px 0 0;
+  }
+  .wm-header-three .navbar-nav > li > a {
+    padding: 30px 0 10px;
+    color: #6c8391;
+  }
+  .wm-header-three .navbar-nav > li:hover > a {
+    color: #f2a450;
+  }
+  .wm-header-three .navbar-nav > li > a:before {
+    display: none;
+  }
+  .wm-header-three .wm-dropdown-menu li a {
+    padding: 10px;
+  }
+  .wm-headerstrip,
+  .wm-mainnav-section {
+    text-align: center;
+  }
+  .wm-headerstrip [class*="col-md-"],
+  .wm-mainnav-section [class*="col-md-"] {
+    float: left;
+    width: 100%;
+  }
+  .wm-cartsection,
+  .wm-header-four .wm-logo,
+  .wm-mainnav-section .wm-right-section {
+    float: none;
+    display: inline-block;
+    position: relative;
+  }
+  .col-md-4,
+  .col-md-3 {
+    float: none;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    margin-right: -4px;
+  }
+  .col-md-7,
+  .col-md-5,
+  .col-md-6 {
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+  }
+  .col-md-12 {
+    float: left;
+    width: 100%;
+  }
+  .wm-banner-nav {
+    position: relative;
+    height: auto;
+    float: left;
+    width: 100%;
+  }
+  .wm-banner-caption {
+    display: none;
+  }
+  .wm-banner-one .slick-arrow {
+    bottom: 0;
+  }
+  .wm-service-list {
+    position: static;
+    float: left;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+  }
+  .wm-main-banner .wm-service-container {
+    float: left;
+    width: 100%;
+  }
+  .wm-caption-two {
+    display: none;
+  }
+  .wm-banner-two .slick-arrow {
+    margin-top: -20px;
+  }
+  .wm-banner-three-caption {
+    width: 100%;
+    padding: 0 80px;
+  }
+  .bannerfour-caption h1 {
+    font-size: 20px;
+  }
+  .bannerfour-caption {
+    display: none;
+  }
+  .wm-bannerfour-thumb {
+    position: static;
+    float: left;
+    width: 100%;
+    background-color: #3e5062;
+  }
+  .wm-callto-action {
+    text-align: center;
+  }
+  .wm-callto-action .wm-left-section,
+  .wm-callto-action .wm-right-section {
+    float: none;
+    display: inline-block;
+  }
+  .wm-callto-action .wm-left-section {
+    margin-bottom: 20px;
+  }
+  .wm-counter-list ul li,
+  .wm-testimonial-section,
+  .wm-map-description-inner,
+  .wm-service-add h2 {
+    width: 100%;
+  }
+  .wm-viewall-testimonial {
+    border-radius: 20px 20px 0 0;
+    right: 0;
+    top: -28px;
+  }
+  .wm-testimonial-section {
+    padding: 52px 30px 90px;
+  }
+  .wm-map-description {
+    background: 0 0;
+  }
+  .wm-map-description {
+    padding: 100px 20px;
+  }
+  .wm-map-description h2 {
+    font-size: 30px;
+  }
+  .wm-map-description span {
+    font-size: 24px;
+  }
+  .wm-service-add h2 {
+    font-size: 40px;
+  }
+  .wm-service-slider .slick-list {
+    margin: 0 -10px;
+  }
+  .wm-service-slider-wrap {
+    padding: 0 10px;
+  }
+  .wm-service > ul > li.col-md-6,
+  .wm-logobox ul li {
+    width: 50%;
+  }
+  .wm-topspacer {
+    padding-top: 0;
+  }
+  .wm-experience-icon ~ .wm-experience-text {
+    padding: 40px 0 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-experience-counter ul li {
+    width: 100%;
+  }
+  .wm-experience-counter ul li:before {
+    display: none;
+  }
+  .wm-awwards-list ul li a {
+    text-align: center;
+  }
+  .wm-awwards-list ul li a img {
+    display: inline-block;
+  }
+  .wm-infinitis-description {
+    padding: 100px 30px;
+  }
+  .wm-contactinfo-btn ul li {
+    margin-bottom: 12px;
+  }
+  .wm-consulting-list .wm-consulting-title {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 6px;
+  }
+  .wm-featured-cases-grid ul li {
+    float: left;
+  }
+  .wm-video-section {
+    width: 100%;
+  }
+  .wm-video-section .mejs-controls .mejs-volume-button {
+    display: none !important;
+  }
+  .wm-gallery-layer .wm-gallery-thumb {
+    width: 33.333%;
+    margin-bottom: 30px;
+  }
+  .wm-infolinks {
+    padding-left: 0;
+  }
+  .wm-partner-list ul li {
+    width: 50%;
+  }
+  .wm-parallex-section h3 {
+    font-size: 40px;
+  }
+  .wm-featured-cases-grid ul li.col-md-8 {
+    display: none;
+  }
+  .wm-service-simple {
+    margin-left: 0;
+    width: 100%;
+  }
+  .wm-service-simple ul li {
+    padding: 25px 0;
+  }
+  .wm-featured-cases-grid figcaption time {
+    display: none;
+  }
+  .wm-featured-cases-grid figcaption h2 {
+    font-size: 18px;
+  }
+  .wm-caselink {
+    font-size: 14px;
+  }
+  .admin-infotext {
+    position: static;
+    float: left;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+  .admin-infotext h2 {
+    font-size: 40px;
+  }
+  .wm-blogslider-caption,
+  .wm-clientsays-caption .wm-arrow-btn {
+    display: none;
+  }
+  .wm-clientsays ul li {
+    width: 100%;
+  }
+  .wm-clientsays-caption h2 {
+    font-size: 24px;
+  }
+  .wm-subscribe-form input[type="email"],
+  .wm-subscribe-form input[type="text"] {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .wm-plan-service {
+    overflow: hidden;
+  }
+  .wm-previus,
+  .wm-next,
+  .wm-previus-post-text h5,
+  .wm-next-post-text h5,
+  .wm-form ul li {
+    width: 100%;
+  }
+  .wm-previus {
+    margin-bottom: 40px;
+  }
+  .wm-form ul {
+    padding: 0;
+  }
+  .wm-blog-auther-text,
+  #wm-comments ul li figure ~ .text {
+    padding: 15px 0 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-blog-medium figure,
+  .wm-blog-medium figure a,
+  .wm-blog-medium figure img {
+    float: left;
+    width: 100%;
+  }
+  .wm-blog-artical-text {
+    padding: 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-blog-artical-text-full {
+    padding: 30px;
+  }
+  .wm-job-listing form .wm-select-two {
+    margin-bottom: 30px;
+  }
+  .wm-job-listing .wm-select-two select,
+  .wm-job-listing-faq .panel .panel-body .wm-jobs-tabs li,
+  .wm-client-call-action,
+  .wm-casestudy-text,
+  .wm-casestudy-btn,
+  .wm-casestudies-list figure,
+  .wm-service-counter .wm-counter-list ul li,
+  .wm-service-challenge p,
+  .countdown-section,
+  .wm-coming-soon input[type="text"],
+  .wm-showing-result figure {
+    width: 100%;
+  }
+  .wm-filterable ul {
+    text-align: center;
+  }
+  .wm-filterable ul li {
+    float: none;
+    display: inline-block;
+  }
+  .wm-casestudies-list figure ~ .casestudies-list-text {
+    margin-left: 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-service-challenge p {
+    padding: 0 0 20px;
+  }
+  .wm-coming-soon-bottom {
+    position: static;
+    float: left;
+    text-align: center;
+  }
+  .wm-coming-soon-top {
+    padding-bottom: 25px;
+  }
+  .wm-coming-soon-topinfo li {
+    float: none;
+    display: inline-block;
+    margin-bottom: 15px;
+  }
+  .countdown-section:after {
+    display: none;
+  }
+  .wm-company-timeline li .wm-company-timeline-text {
+    float: left;
+    width: 100%;
+    padding: 20px 0 0;
+  }
+  .wm-company-timeline ul:before {
+    display: none;
+  }
+  .wm-avenue-contact > ul {
+    margin: 0;
+    text-align: center;
+  }
+  .wm-avenue-contact > ul > li {
+    float: none;
+    display: inline-block;
+    padding: 0;
+  }
+  .wm-social-list ul li {
+    margin-bottom: 10px;
+  }
+  .contact-service ul li {
+    margin-bottom: 30px;
+  }
+  .wm-content-tab ul.nav-tabs {
+    text-align: center;
+  }
+  .wm-content-tab .nav-tabs > li {
+    float: none;
+    display: inline-block;
+  }
+  .wm-content-tab .nav-tabs > li {
+    margin: 0 15px 15px;
+  }
+  .wm-content-tab ul.nav-tabs li:first-child a {
+    margin-left: 15px;
+  }
+  .wm-content-tab .nav-tabs > li {
+    margin-bottom: 15px;
+  }
+  .wm-showing-result-info {
+    margin-left: 0;
+    float: left;
+    width: 100%;
+    padding: 10px 0 0;
+  }
+  .wm-client-listing-text {
+    padding: 20px 0 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-team > ul > li {
+    float: none;
+  }
+  .team-discription a {
+    font-size: 12px;
+  }
+  .wm-team-medium figure {
+    width: 100%;
+  }
+  .wm-team-text {
+    padding-left: 0;
+  }
+  .wm-team-medium .wm-team-info ul {
+    position: static;
+    float: left;
+    width: 100%;
+    margin: 0;
+  }
+  .wm-marketing-service i ~ .wm-marketing-service-text {
+    margin-left: 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-marketing-service {
+    width: 100%;
+    padding-right: 0;
+  }
+  .wm-service-modeling ul {
+    float: left;
+  }
+  .wm-shop-images,
+  .wm-summary,
+  .wm-shop-images img {
+    width: 100%;
+  }
+  .wm-shoptags a {
+    margin-bottom: 10px;
+  }
+  .wm-shop-images {
+    padding-right: 0;
+  }
+  #wm-comments ul ul.children {
+    padding-left: 20px;
+  }
+  .wm-pagination-blog > ul > li {
+    margin-bottom: 11px;
+  }
+  .wm-shop-medium figure,
+  .wm-member-medium figure {
+    width: 100%;
+  }
+  .wm-shop-medium figure ~ .wm-shop-medium-text {
+    margin-left: 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-member-medium-text {
+    padding-left: 0;
+  }
+  .wm-member-medium form .wm-select-two {
+    width: 100%;
+  }
+  .wm-member-medium form input[type="submit"] {
+    position: static;
+    float: left;
+    margin-top: 15px;
+  }
+  .wm-recent-member-grid li {
+    margin-bottom: 30px;
+  }
+  .wm-testimonails-medium figure {
+    width: 100%;
+  }
+  .wm-testimonails-info {
+    margin-left: 0;
+    float: left;
+    width: 100%;
+  }
+  .wm-testimonails-info h2 {
+    font-size: 18px;
+  }
+  a.testimonails-email {
+    float: left;
+    margin-bottom: 15px;
+  }
+  .wm-icon-list-style {
+    margin-bottom: 20px;
+  }
+  .wm-tabs-listing .nav-tabs,
+  .wm-tabs-listing .tab-content {
+    width: 100%;
+  }
+  .wm-footer-topsec:before {
+    width: 100%;
+    height: 50%;
+  }
+  .wm-newslatter {
+    margin-bottom: 100px;
+  }
+  .wm-footer-bottomsec:before {
+    left: 0%;
+    margin-left: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 40%;
+  }
+  .wm-footer-widget-area {
+    padding: 0 0 90px;
+  }
+  .wm-newslatter p,
+  .wm-footer-contactinfo {
+    width: 100%;
+  }
+  .wm-footer-form {
+    padding-left: 0;
+  }
+  .wm-newslatter form input[type="text"] {
+    min-width: 100%;
+  }
+  .wm-footer-widget .widget {
+    float: none;
+    display: inline-block;
+    width: 100%;
+  }
+  .wm-footer-information ul li {
+    width: 50%;
+  }
+}
+@media (max-width: 480px) {
+  .col-md-4,
+  .col-md-3,
+  .wm-service > ul > li.col-md-6,
+  .wm-logobox ul li,
+  .wm-footer-information ul li {
+    width: 100%;
+    margin-right: 0;
+  }
+  .wm-experience-text span {
+    width: auto;
+  }
+  .wm-service-list {
+    padding: 52px 30px 60px;
+  }
+  .wm-footer-widget .widget_recentcase ul li {
+    width: 50%;
+  }
+  .wm-banner-three-caption {
+    display: none;
+  }
+  .wm-gallery-layer .wm-gallery-thumb,
+  .wm-parallex-section h2,
+  .wm-404-link ul li,
+  .contact-form li {
+    width: 100%;
+  }
+  .latest-news-text .wm-text-section {
+    margin-left: 0;
+    float: left;
+    width: 100%;
+  }
+  .contact-info span,
+  .contact-info a {
+    font-size: 20px;
+  }
+  .wm-testimonails-info {
+    height: 300px;
+    padding: 25px 40px 0 30px;
+  }
+  .wm-table-content ul li,
+  .wm-table-head li {
+    float: left;
+    width: 100%;
+  }
+  .wm-counter-list ul li span {
+    margin: 0;
+    display: block;
+  }
+  .wm-service-list ul li {
+    line-height: 1.4;
+  }
+  .wm-company-description {
+    padding-left: 20px;
+  }
+  .wm-company-info {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 991px) and (max-width: 1054px) {
+}
+@media screen and (min-width: 1000px) and (max-width: 1440px) {
+  .wm-banner-nav {
+    height: 463px;
+  }
+}
