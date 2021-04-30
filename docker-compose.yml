@@ -21,7 +21,6 @@ services:
       - ./postgredb:/var/lib/postgresql/data
     env_file: ./core/.env
   nginx:
-    image: nginx:latest
     build:
       context: ./nginx
       dockerfile: Dockerfile
@@ -29,9 +28,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./core/static/snippet:/var/www/backend/static
-      - ./core/media:/var/www/backend/media
+      - ./static:/var/www/web/static
+      - ./media:/var/www/web/media
     depends_on:
-      - backend
+      - 'backend'
 
