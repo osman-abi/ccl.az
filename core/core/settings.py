@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '^&ba2lp#wa$i2e!g)$h*&thdu-+n@*oa7%4v5-5^uw=)iv7zls'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if not DEBUG:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -174,9 +174,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/snippet')
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/')
-]
+if not DEBUG:
+    STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
+else:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static_files")
+    ]
 
