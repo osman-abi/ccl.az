@@ -17,7 +17,7 @@ class Logo(models.Model):
 class Slide(models.Model):
     image = models.ImageField(
         upload_to='slides/', blank=True, verbose_name='Slayd şəkli')
-    context = models.TextField(blank=True,null=True,verbose_name="Slayd mətni")
+    context = models.TextField(max_length=80,blank=True,null=True,verbose_name="Slayd mətni")
     button_name = models.CharField(max_length=100, blank=True, verbose_name='Linkin adı')
     button_link = models.URLField(verbose_name='Link')
     class Meta:

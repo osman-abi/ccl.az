@@ -8,4 +8,4 @@ from .models import Service
 class ServiceDetailView(DetailView):
     model = Service
     context_object_name = 'service'
-    template_namev = 'services/service_template.html'
+    template_name = 'services/service_template.html'

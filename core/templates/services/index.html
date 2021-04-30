@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -35,76 +36,98 @@
     <div class="wm-main-wrapper">
         <header id="wm-header" class="wm-header-one">
 
-            <div class="wm-topsection">
-            <div class="container">
-            <div class="row">
-              {% for logo in logos %}
-              <div class="col-md-3"><a href="#" class="wm-logo"><img src="{{logo.image.url}}" alt=""></a></div>
-              {% endfor %}
-              <div class="col-md-9">
-                <ul class="wm-topinfo">
-                  {% for contact in contacts %}
-                  <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
-                  <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
-                  {% endfor %}
-                  <li><i class="flaticon-nation"></i> <a href="#">English <i class="fa fa-angle-down"></i></a>
-                    <ul class="wm-language-popup">
-            
-                      <li><a href="#">Azerbaijani</a></li>
-                      <li><a href="#">Russian</a></li>
-            </ul>
-            </li>
-            </ul>
-            </div>
-            </div>
-            </div>
-            </div>
-            
-            
-            <div class="wm-navsection">
-            <div class="container">
-            <div class="row">
-            <div class="col-md-12">
-            <div class="wm-navinner-section">
-            
-            <nav class="navbar navbar-default">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            
-            <ul class="nav navbar-nav">
-            
-              <li class="menu-item active"><a href="{% url 'home' %}">Home</a>
-              </li>
-              <li class="menu-item"><a href="{% url 'services' %}">Services</a>
-              </li>
-              <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
-              </li>
-              <li class="menu-item"><a href="{% url 'about' %}">About</a>
-              </li>
-              <li class="menu-item"><a href="{% url 'blogs' %}">News</a>
-              </li>
-              <li class="menu-item"><a href="{% url 'contact' %}">Contact</a>
-              </li>
-            
-            </ul>
-            </div>
-            </nav>
-            
-            
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            
-            </header>
+<div class="wm-topsection">
+<div class="container">
+<div class="row">
+  {% for logo in logos %}
+  <div class="col-md-3"><a href="#" class="wm-logo"><img src="{{logo.image.url}}" alt=""></a></div>
+  {% endfor %}
+<div class="col-md-9">
+  <ul class="wm-topinfo">
+  {% for contact in contacts %}
+  <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
+  <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
+  {% endfor %}
+   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">English <i class="fa fa-angle-down"></i></a>
+                  <ul class="wm-language-popup">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                      {% for lang in languages %}
+                    <li><a class="lang" href="{% url 'select_language' lang.code %}">{{ lang.code }}</a></li>
+                      {% endfor %}
+                  </ul>
+
+
+{#  #}
+{#  <input type="submit" value="{{lang.code}}" {% if lang.code == LANGUAGE_CODE %} disabled {% endif %} name="language"/>#}
+{#  {% endfor %}#}
+
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script>
+        console.clear();
+        var langOptions = document.querySelectorAll(".lang")
+        for (const lang of langOptions) {
+          lang.addEventListener('click',()=>{
+            document.getElementById('langCURRENT').innerHTML = lang.innerHTML;
+            console.info(lang.innerHTML);
+          })
+        }
+    </script>
+
+<div class="wm-navsection">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="wm-navinner-section">
+
+
+
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse-1" style="display: block;">
+
+<ul class="nav navbar-nav" style="flex-direction: row;" >
+
+  <li class="menu-item active"><a href="{% url 'home' %}">{% trans "Home" %}</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'services' %}">{% trans "Services" %}</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'about' %}">About</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'blogs' %}">News</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'contact' %}">Contact</a>
+</li>
+
+</ul>
+</div>
+</nav>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</header>
 
       <div class="wm-mini-header">
         <div class="container">
@@ -134,21 +157,21 @@
                     {% for service in services %}
                     <li class="col-md-4">
                       <figure>
-                        <a href="{% url 'service_detail' service.id %}"
-                          ><img src="{{service.image.url}}" alt=""
+                        <a href="{% url 'service_detail' service.pk %}"
+                          ><img src="{{service.service_image.url}}" alt=""
                         /></a>
-                        <a class="wm-icon" href="{% url 'service_detail' service.id %}"
+                        <a class="wm-icon" href="{% url 'service_detail' service.pk %}"
                           ><i class="flaticon-interface-2"></i
                         ></a>
                       </figure>
                       <div class="wm-services-text">
                         <a
                           class="wm-title-services"
-                          href="s{% url 'service_detail' service.id %}"
+                          href="s{% url 'service_detail' service.pk %}"
                           >{{service.title}}</a
                         >
                         <p>
-                          {{service.description}}
+                          {{service.context|truncatechars:100}}
                         </p>
                         <a
                           class="wm-readmore-icon"

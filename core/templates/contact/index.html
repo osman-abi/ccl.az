@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -44,12 +45,22 @@
   <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
   <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
   {% endfor %}
-  <li><i class="flaticon-nation"></i> <a href="#">English <i class="fa fa-angle-down"></i></a>   
-<ul class="wm-language-popup">
+   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">English <i class="fa fa-angle-down"></i></a>
+                  <ul class="wm-language-popup">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                      {% for lang in languages %}
+                    <li><a class="lang" href="{% url 'select_language' lang.code %}">{{ lang.code }}</a></li>
+                      {% endfor %}
+                  </ul>
 
-<li><a href="#">Azerbaijani</a></li>
-<li><a href="#">Russian</a></li>
-</ul>
+
+{#  #}
+{#  <input type="submit" value="{{lang.code}}" {% if lang.code == LANGUAGE_CODE %} disabled {% endif %} name="language"/>#}
+{#  {% endfor %}#}
+
+
 </li>
 </ul>
 </div>
@@ -57,12 +68,24 @@
 </div>
 </div>
 
+    <script>
+        console.clear();
+        var langOptions = document.querySelectorAll(".lang")
+        for (const lang of langOptions) {
+          lang.addEventListener('click',()=>{
+            document.getElementById('langCURRENT').innerHTML = lang.innerHTML;
+            console.info(lang.innerHTML);
+          })
+        }
+    </script>
 
 <div class="wm-navsection">
 <div class="container">
 <div class="row">
 <div class="col-md-12">
 <div class="wm-navinner-section">
+
+
 
 <nav class="navbar navbar-default">
 <div class="navbar-header">
@@ -77,9 +100,9 @@
 
 <ul class="nav navbar-nav" style="flex-direction: row;" >
 
-  <li class="menu-item active"><a href="{% url 'home' %}">Home</a>
+  <li class="menu-item active"><a href="{% url 'home' %}">{% trans "Home" %}</a>
   </li>
-  <li class="menu-item"><a href="{% url 'services' %}">Services</a>
+  <li class="menu-item"><a href="{% url 'services' %}">{% trans "Services" %}</a>
   </li>
   <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
   </li>
@@ -164,14 +187,14 @@
                                 onfocus="if(this.value =='Phone Number') { this.value = ''; }"
                               />
                             </li>
-                            <!-- <li class="full-input">
+                             <li class="full-input">
                               <input
                                 type="text"
                                 value="Subject"
                                 onblur="if(this.value == '') { this.value ='Subject'; }"
                                 onfocus="if(this.value =='Subject') { this.value = ''; }"
                               />
-                            </li> -->
+                            </li>
                             <li class="full-input">
                               <textarea placeholder="Message"></textarea>
                             </li>

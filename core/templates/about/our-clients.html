@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -47,12 +48,22 @@
   <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
   <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
   {% endfor %}
-  <li><i class="flaticon-nation"></i> <a href="#">English <i class="fa fa-angle-down"></i></a>   
-<ul class="wm-language-popup">
+   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">English <i class="fa fa-angle-down"></i></a>
+                  <ul class="wm-language-popup">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                      {% for lang in languages %}
+                    <li><a class="lang" href="{% url 'select_language' lang.code %}">{{ lang.code }}</a></li>
+                      {% endfor %}
+                  </ul>
 
-<li><a href="#">Azerbaijani</a></li>
-<li><a href="#">Russian</a></li>
-</ul>
+
+{#  #}
+{#  <input type="submit" value="{{lang.code}}" {% if lang.code == LANGUAGE_CODE %} disabled {% endif %} name="language"/>#}
+{#  {% endfor %}#}
+
+
 </li>
 </ul>
 </div>
@@ -60,12 +71,24 @@
 </div>
 </div>
 
+    <script>
+        console.clear();
+        var langOptions = document.querySelectorAll(".lang")
+        for (const lang of langOptions) {
+          lang.addEventListener('click',()=>{
+            document.getElementById('langCURRENT').innerHTML = lang.innerHTML;
+            console.info(lang.innerHTML);
+          })
+        }
+    </script>
 
 <div class="wm-navsection">
 <div class="container">
 <div class="row">
 <div class="col-md-12">
 <div class="wm-navinner-section">
+
+
 
 <nav class="navbar navbar-default">
 <div class="navbar-header">
@@ -80,9 +103,9 @@
 
 <ul class="nav navbar-nav" style="flex-direction: row;" >
 
-  <li class="menu-item active"><a href="{% url 'home' %}">Home</a>
+  <li class="menu-item active"><a href="{% url 'home' %}">{% trans "Home" %}</a>
   </li>
-  <li class="menu-item"><a href="{% url 'services' %}">Services</a>
+  <li class="menu-item"><a href="{% url 'services' %}">{% trans "Services" %}</a>
   </li>
   <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
   </li>
@@ -193,134 +216,11 @@
                         </p>
                       </div>
                     </li>
-                      
+
                     {% endfor %}
-          
-          
-                    <!-- <li>
-                      <figure>
-                        <a href="service-single-post.html"
-                          ><img src="{% static 'snippet/img_about/client-2.jpg'%}" alt=""
-                        /></a>
-                      </figure>
-                      <div class="wm-client-listing-text">
-                        <h4>
-                          <a href="service-single-post.html"
-                            >Sportsman's Warehouse</a
-                          >
-                        </h4>
-                        <span>Engage their fans</span>
-                        <p>
-                          FTI Consulting was retained to help design and
-                          implement a plan of the whole reorganization for
-                          Sportsman’s Warehouse, which included closing.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <figure>
-                        <a href="service-single-post.html"
-                          ><img src="{% static 'snippet/img_about/client-3.jpg'%}" alt=""
-                        /></a>
-                      </figure>
-                      <div class="wm-client-listing-text">
-                        <h4>
-                          <a href="service-single-post.html">TXCO Resources</a>
-                        </h4>
-                        <span
-                          >Valuable connection & strengthen relationships with
-                          their community
-                        </span>
-                        <p>
-                          However, due to a faltering economy in 2007 and
-                          tightening credit, Sportsman’s Warehouse faced
-                          declining sales and became highly leveraged.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <figure>
-                        <a href="service-single-post.html"
-                          ><img src="{% static 'snippet/img_about/client-4.jpg'%}" alt=""
-                        /></a>
-                      </figure>
-                      <div class="wm-client-listing-text">
-                        <h4>
-                          <a href="service-single-post.html"
-                            >Liquidation Trustee</a
-                          >
-                        </h4>
-                        <span>Needed a content marketing software</span>
-                        <p>
-                          Founded in 1996, Sportsman’s Warehouse grew to 67
-                          stores nationally with more than $700 million in
-                          annual sales.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <figure>
-                        <a href="service-single-post.html"
-                          ><img src="{% static 'snippet/img_about/client-5.jpg'%}" alt=""
-                        /></a>
-                      </figure>
-                      <div class="wm-client-listing-text">
-                        <h4>
-                          <a href="service-single-post.html">Alaska Airlines</a>
-                        </h4>
-                        <span>Insurance and investment financial services</span>
-                        <p>
-                          Expert witness and trial services in regard to the
-                          largest reported Ponzi scheme in U.S. history.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <figure>
-                        <a href="service-single-post.html"
-                          ><img src="{% static 'snippet/img_about/client-6.jpg'%}" alt=""
-                        /></a>
-                      </figure>
-                      <div class="wm-client-listing-text">
-                        <h4>
-                          <a href="service-single-post.html"
-                            >Costco Wholesale</a
-                          >
-                        </h4>
-                        <span
-                          >Streamline the content creation & distribution
-                          process</span
-                        >
-                        <p>
-                          Provide global investigative fact gathering, forensic
-                          accounting, complex finance and enterprise data
-                          analytics, certain electronic discovery.
-                        </p>
-                      </div>
-                    </li>
-                    <li>
-                      <figure>
-                        <a href="service-single-post.html"
-                          ><img src="{% static 'snippet/img_about/client-7.jpg'%}" alt=""
-                        /></a>
-                      </figure>
-                      <div class="wm-client-listing-text">
-                        <h4>
-                          <a href="service-single-post.html"
-                            >Compassion International</a
-                          >
-                        </h4>
-                        <span
-                          >Continue the engagement & sustain their
-                          audience</span
-                        >
-                        <p>
-                          In this historic and internationally publicized case,
-                          FTI Consulting was retained by the liquidation trustee
-                          of Investment Securities.
-                        </p>
-                      </div>
-                    </li> -->
+
+
+
                   </ul>
                 </div>
               </div>

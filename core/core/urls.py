@@ -18,20 +18,25 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 from django.conf import settings
 from django.conf.urls.static import static
+from django.utils.translation import gettext_lazy as _
+from . import views
 
 urlpatterns = [
+    path('selectlanguage/<str:lang_code>', views.set_language, name = 'select_language'),
+    path('rosetta/', include('rosetta.urls')),
+]
+
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
     path('', include('homepage.urls')),
     path('haqqimizda/', include('aboutpage.urls')),
     path('contact/', include('contactpage.urls')),
     path('news/', include('newspage.urls')),
     path('services/', include('servicepage.urls')),
-    path('clients/',include('ourclientpage.urls'))
-]
-
-urlpatterns += i18n_patterns(
-    
+    path('clients/', include('ourclientpage.urls')),
+    prefix_default_language=True,
 )
+
 
 
 urlpatterns += static(settings.STATIC_URL,

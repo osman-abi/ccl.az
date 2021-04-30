@@ -6,5 +6,9 @@ class Service(models.Model):
     service_description = models.CharField(max_length=200)
     service_image = models.ImageField(upload_to='service/')
     context = models.TextField(blank=True,null=True)
+
+    class Meta:
+        verbose_name_plural = 'Xidmetlerimiz'
+
     def __str__(self):
         return self.title

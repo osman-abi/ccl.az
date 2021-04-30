@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 01:21+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2021-04-19 11:27+0000\n"
+"PO-Revision-Date: 2021-04-19 11:24+0000\n"
+"Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,15 +19,54 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.6\n"
 
-#: core/settings.py:124
-msgid "English"
+#: core/settings.py:128
+msgid "Azerbaijani"
 msgstr ""
 
-#: core/settings.py:125
+#: core/settings.py:129
 msgid "Russian"
 msgstr ""
 
-#: core/settings.py:126
-msgid "Azerbaijani"
+#: core/settings.py:130
+msgid "English"
 msgstr ""
+
+#: core/urls.py:32
+msgid "haqqimizda/"
+msgstr ""
+
+#: core/urls.py:33
+msgid "contact/"
+msgstr ""
+
+#: core/urls.py:34
+msgid "news/"
+msgstr ""
+
+#: core/urls.py:35
+msgid "services/"
+msgstr ""
+
+#: core/urls.py:36
+msgid "clients/"
+msgstr ""
+
+#: templates/about/index.html:118
+msgid "About Us"
+msgstr "asdasdas"
+
+#: templates/contact/index.html:82 templates/home/index.html:96
+#: templates/news/news_template.html:78
+#: templates/services/service_template.html:78
+msgid "Home"
+msgstr "дома"
+
+#: templates/home/index.html:98
+msgid "Services"
+msgstr "asadsad"
+
+#: templates/home/index.html:224
+msgid "Your business can get smarter."
+msgstr "Ваш бизнес может стать умнее."

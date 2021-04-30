@@ -8,5 +8,8 @@ class Blog(models.Model):
     blog_context = models.TextField()
     publish_date = models.DateTimeField(auto_now=True)
 
+    class Meta:
+        verbose_name_plural = 'Yeniliklerimiz'
+
     def __str__(self):
         return self.blog_title

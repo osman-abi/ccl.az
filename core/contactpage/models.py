@@ -7,6 +7,9 @@ class ContactInfo(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length=50, verbose_name='Əlaqə nömrəsi')
     address = models.CharField(max_length=300, verbose_name='Ünvan')
+
+    class Meta:
+        verbose_name_plural = 'Kontakt Info'
     
     def __str__(self):
         return self.email

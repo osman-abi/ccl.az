@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -32,71 +33,98 @@
     <div class="wm-main-wrapper">
         <header id="wm-header" class="wm-header-one">
 
-            <div class="wm-topsection">
-            <div class="container">
-            <div class="row">
-            <div class="col-md-3"><a href="#" class="wm-logo"><img src="/img/logo-1.png" alt=""></a></div>
-            <div class="col-md-9">
-            <ul class="wm-topinfo">
-            <li><i class="fa fa-map-marker-alt"></i> <span>İmişli Ş. E.İbrahimov Küçəsi</span></li>
-            <li><i class="flaticon-technology"></i> <span>+994 (55) 555-5555</span></li>
-            <li><i class="flaticon-nation"></i> <a href="#">English <i class="fa fa-angle-down"></i></a>
-            <ul class="wm-language-popup">
-            <li><a href="#">Azerbaijani</a></li>
-            <li><a href="#">Russian</a></li>
-            </ul>
-            </li>
-            </ul>
-            </div>
-            </div>
-            </div>
-            </div>
-            
-            
-            <div class="wm-navsection">
-            <div class="container">
-            <div class="row">
-            <div class="col-md-12">
-            <div class="wm-navinner-section">
-            
-            <nav class="navbar navbar-default">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-1">
-            
-            <ul class="nav navbar-nav">
-            
-              <li class="menu-item"><a href="//127.0.0.1:5500/index.html">Home</a>
-              </li>
-              <li class="menu-item active"><a href="//127.0.0.1:5500/services/index.html">Services</a>
-              </li>
-              <li class="menu-item"><a href="//127.0.0.1:5500/about/our-clients.html">Our Clients</a>
-              </li>
-              <li class="menu-item"><a href="//127.0.0.1:5500/about/index.html">About</a>
-              </li>
-              <li class="menu-item"><a href="//127.0.0.1:5500/news/index.html">News</a>
-              </li>
-              <li class="menu-item"><a href="//127.0.0.1:5500/contact.html">Contact</a>
-            </li>
-            
-            </ul>
-            </div>
-            </nav>
-            
-            
-            </div>
-            </div>
-            </div>
-            </div>
-            </div>
-            
-            </header>
+<div class="wm-topsection">
+<div class="container">
+<div class="row">
+  {% for logo in logos %}
+  <div class="col-md-3"><a href="#" class="wm-logo"><img src="{{logo.image.url}}" alt=""></a></div>
+  {% endfor %}
+<div class="col-md-9">
+  <ul class="wm-topinfo">
+  {% for contact in contacts %}
+  <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
+  <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
+  {% endfor %}
+   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">English <i class="fa fa-angle-down"></i></a>
+                  <ul class="wm-language-popup">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                      {% for lang in languages %}
+                    <li><a class="lang" href="{% url 'select_language' lang.code %}">{{ lang.code }}</a></li>
+                      {% endfor %}
+                  </ul>
+
+
+{#  #}
+{#  <input type="submit" value="{{lang.code}}" {% if lang.code == LANGUAGE_CODE %} disabled {% endif %} name="language"/>#}
+{#  {% endfor %}#}
+
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script>
+        console.clear();
+        var langOptions = document.querySelectorAll(".lang")
+        for (const lang of langOptions) {
+          lang.addEventListener('click',()=>{
+            document.getElementById('langCURRENT').innerHTML = lang.innerHTML;
+            console.info(lang.innerHTML);
+          })
+        }
+    </script>
+
+<div class="wm-navsection">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<div class="wm-navinner-section">
+
+
+
+<nav class="navbar navbar-default">
+<div class="navbar-header">
+<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse-1" style="display: block;">
+
+<ul class="nav navbar-nav" style="flex-direction: row;" >
+
+  <li class="menu-item active"><a href="{% url 'home' %}">{% trans "Home" %}</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'services' %}">{% trans "Services" %}</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'about' %}">About</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'blogs' %}">News</a>
+  </li>
+  <li class="menu-item"><a href="{% url 'contact' %}">Contact</a>
+</li>
+
+</ul>
+</div>
+</nav>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</header>
 
       <div class="wm-mini-header">
         <div class="container">
@@ -118,35 +146,33 @@
         <div class="wm-main-section">
           <div class="container">
             <div class="row">
-              <aside class="col-md-3">
-                <div class="widget widget_client-nav">
-                  <ul>
-                    <li>
-                      <a href="company-history.html">Our Company History</a>
-                    </li>
-                    <li><a href="our-strategy.html">Our Strategy</a></li>
-                    <li><a href="our-clients.html">Our Clients</a></li>
-                    <li>
-                      <a href="careers-job-listing.html">Our Job Listings</a>
-                    </li>
-                    <li><a href="our-team-full-width.html">Our Team</a></li>
-                    <li><a href="careers-vacancy.html">Vacancy</a></li>
-                  </ul>
-                </div>
-              </aside>
-              <div class="col-md-9">
+{#              <aside class="col-md-3">#}
+{#                <div class="widget widget_client-nav">#}
+{#                  <ul>#}
+{#                    <li>#}
+{#                      <a href="company-history.html">Our Company History</a>#}
+{#                    </li>#}
+{#                    <li><a href="our-strategy.html">Our Strategy</a></li>#}
+{#                    <li><a href="our-clients.html">Our Clients</a></li>#}
+{#                    <li>#}
+{#                      <a href="careers-job-listing.html">Our Job Listings</a>#}
+{#                    </li>#}
+{#                    <li><a href="our-team-full-width.html">Our Team</a></li>#}
+{#                    <li><a href="careers-vacancy.html">Vacancy</a></li>#}
+{#                  </ul>#}
+{#                </div>#}
+{#              </aside>#}
+              <div class="col-md-12">
                 <figure class="wm-service-thumb">
                   <a href="#"
-                    ><img src="extra-images/service-single-post-1.jpg" alt=""
+                    ><img src="{{ service.service_image.url }}" alt=""
                   /></a>
                 </figure>
                 <div class="wm-service-editore">
                   <div class="wm-widget-title">
-                    <h2>Lorem? Ipsum!</h2>
+                    <h2>{{ service.title}}</h2>
                   </div>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis illo nihil quod omnis excepturi laudantium officia quas minus, maxime atque aliquam corrupti architecto aut reiciendis voluptate expedita animi vitae amet officiis quidem? Dolore placeat, soluta accusamus tempore modi repellat enim reiciendis dolores autem temporibus doloremque quibusdam in deserunt numquam ad perspiciatis hic consectetur excepturi distinctio unde quo! Sequi saepe impedit illo facilis sit deleniti quod nam velit nemo odit, dolor autem quibusdam asperiores porro maxime harum voluptate nulla iste ratione eos veniam quae molestiae consequatur. Assumenda, omnis! Minima delectus laboriosam animi officiis, ex nobis quo excepturi quia odit? Numquam esse ipsam omnis. Adipisci voluptatibus pariatur beatae, magni blanditiis dignissimos saepe asperiores facere quaerat soluta atque maxime distinctio est. Recusandae excepturi facere rem pariatur illum possimus quibusdam veritatis laborum alias et itaque fuga, dignissimos eum vitae eveniet maiores amet commodi minima quisquam suscipit quis, impedit fugiat voluptate. Pariatur provident quis voluptas, cumque vitae qui molestias labore laboriosam saepe accusamus alias sequi perferendis nulla dolorem impedit reiciendis neque aliquam quia, distinctio praesentium voluptatibus repellendus dolores nihil earum? Consectetur voluptatum est delectus numquam eveniet, atque nihil accusantium deleniti adipisci esse iusto ut, quo odit. Sequi earum ea harum sunt. Ea labore at porro praesentium! Neque, voluptate reprehenderit? At fuga excepturi non cum placeat perspiciatis impedit nulla aspernatur maiores nam, voluptatibus, id, itaque nobis provident? Mollitia nulla doloribus ullam dolorem minima. Dolorum alias a architecto porro, aut cupiditate aliquid. Commodi vel minima maiores ipsam explicabo blanditiis voluptas natus ullam facilis asperiores temporibus, numquam enim iusto veritatis consequatur optio, ex eos quisquam dignissimos non id possimus earum dolores? Eius, maiores ipsam id sint voluptate, unde, eveniet illum quas necessitatibus quam cum consequatur odit harum sed aspernatur tempore suscipit esse. Rem voluptate fugit, ipsum unde hic repellat rerum. Veritatis saepe harum magnam enim facere laborum! Eligendi iure omnis, dicta temporibus ipsum hic eaque itaque commodi fuga tenetur, asperiores ut ducimus consectetur cupiditate mollitia, vel doloremque illum animi! Ipsam dolorum tenetur aliquam doloremque distinctio incidunt esse debitis cum tempore adipisci quibusdam in illo tempora atque enim consectetur sequi fugit, quos cumque quam qui quisquam. Debitis esse hic tempora, voluptas fugit odit eligendi deleniti exercitationem impedit quas nemo maxime asperiores quis illo accusamus velit, in cumque rem vel ipsum autem? Officiis minima culpa natus consequatur, libero quaerat consectetur voluptatibus? Debitis ratione minus explicabo suscipit pariatur dolor, obcaecati beatae optio corporis eum quo voluptate nam culpa neque consectetur accusamus harum. Ipsa rerum, quidem quasi neque nesciunt inventore dolor itaque. Excepturi blanditiis sint laborum eveniet. Facere non fuga consectetur beatae dolorum iste cumque eveniet nobis omnis quis. Excepturi nam iste delectus. Reiciendis earum omnis, eos ratione ex provident quam praesentium sequi soluta repudiandae, quas quibusdam voluptate iure minus corporis vel! Rem suscipit eum nostrum, asperiores similique laudantium cumque molestiae obcaecati quisquam doloribus est quasi mollitia, ullam reiciendis illo. Reprehenderit quam nihil vel obcaecati consequatur asperiores sit voluptatibus voluptas! Veniam laudantium obcaecati ducimus ut facere, dignissimos ipsa ad quaerat eius dolores molestiae voluptatem nostrum voluptates molestias! Deserunt dicta eius sed ipsam?
-                  </p>
+                  <p>{{ service.context }}</p>
                 </div>
             </div>
           </div>
