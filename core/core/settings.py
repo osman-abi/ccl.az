@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-if not DEBUG:
+if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
@@ -173,7 +173,7 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
-if not DEBUG:
+if DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 else:
     STATICFILES_DIRS = [
