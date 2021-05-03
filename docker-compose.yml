@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     command: /venv/bin/gunicorn core.wsgi --bind 0.0.0.0:8000 --timeout 300
     volumes:
-      - ./core/static/snippet:/backend/static #after static folder create - fill static_files volume
+      - ./core/static/snippet:/backend/static/snippet #after static folder create - fill static_files volume
       - ./core/media:/backend/media #after static folder create - fill static_files volume
     ports:
       - "8000:8000"
@@ -28,8 +28,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./static:/var/www/web/static
-      - ./media:/var/www/web/media
+      - ./static:/var/www/backend/static/snippet
+      - ./media:/var/www/backend/media
     depends_on:
       - 'backend'
 
