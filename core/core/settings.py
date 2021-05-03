@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '^&ba2lp#wa$i2e!g)$h*&thdu-+n@*oa7%4v5-5^uw=)iv7zls'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -174,10 +174,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static/snippet")
-else:
-    STATICFILES_DIRS = [
+STATIC_ROOT = os.path.join(BASE_DIR, "static/snippet")
+STATICFILES_DIRS = [
         os.path.join(BASE_DIR, "static/")
     ]
 
