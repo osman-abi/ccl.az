@@ -28,8 +28,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./static:/var/www/backend/static/snippet
-      - ./media:/var/www/backend/media
+      - ./core/static/snippet:/var/www/backend/static/snippet
+      - ./core/media:/var/www/backend/media
     depends_on:
       - 'backend'
 
