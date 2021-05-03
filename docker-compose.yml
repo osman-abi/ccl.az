@@ -42,7 +42,7 @@ services:
       dockerfile: Dockerfile
     command: /venv/bin/gunicorn core.wsgi --bind 0.0.0.0:8000
     restart: "always"
-    env_file: .env
+    env_file: ./core/.env
     environment:
       - VIRTUAL_HOST=157.230.105.201
       - VIRTUAL_PORT=8000
@@ -63,7 +63,7 @@ services:
       - 5432:5432 # Bind host port 5432 to PostgreSQL port 5432
     volumes:
       - postgredb:/var/lib/postgresql/data
-    env_file: .env
+    env_file: ./core/.env
 
   nginx:
     build:
