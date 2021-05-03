@@ -1,25 +1,70 @@
 version: "3.3"
    
 services:
+  # backend:
+  #   container_name: backend
+  #   build:
+  #     context: ./core
+  #     dockerfile: Dockerfile
+  #   command: /venv/bin/gunicorn core.wsgi --bind 0.0.0.0:8000 --timeout 300
+  #   volumes:
+  #     - ./core/static:/backend/static #after static folder create - fill static_files volume
+  #     - ./core/media:/backend/media #after static folder create - fill static_files volume
+  #   ports:
+  #     - "8000:8000"
+  # postgres:
+  #   container_name: postgres-db
+  #   image: postgres:9.6
+  #   ports:
+  #     - 5432:5432 # Bind host port 5432 to PostgreSQL port 5432
+  #   volumes:
+  #     - ./postgredb:/var/lib/postgresql/data
+  #   env_file: ./core/.env
+  # nginx:
+  #   build:
+  #     context: ./nginx
+  #     dockerfile: Dockerfile
+  #   container_name: nginx-proxy
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ./core/static:/var/www/backend/static
+  #     - ./core/media:/var/www/backend/media
+  #   depends_on:
+  #     - 'backend'
+
+
+
   backend:
     container_name: backend
     build:
       context: ./core
       dockerfile: Dockerfile
-    command: /venv/bin/gunicorn core.wsgi --bind 0.0.0.0:8000 --timeout 300
+    command: /venv/bin/gunicorn core.wsgi --bind 0.0.0.0:8000
+    restart: "always"
+    env_file: .env
+    environment:
+      - VIRTUAL_HOST=157.230.105.201
+      - VIRTUAL_PORT=8000
+      - TIMEOUT=300
+      - HTTP_PORT=8000
+      - STATS_PORT=8001
     volumes:
       - ./core/static:/backend/static #after static folder create - fill static_files volume
       - ./core/media:/backend/media #after static folder create - fill static_files volume
     ports:
       - "8000:8000"
+    depends_on:
+      - postgres
+
   postgres:
-    container_name: postgres-db
-    image: postgres:9.6
+    image: postgres:12.2-alpine
     ports:
       - 5432:5432 # Bind host port 5432 to PostgreSQL port 5432
     volumes:
-      - ./postgredb:/var/lib/postgresql/data
-    env_file: ./core/.env
+      - postgredb:/var/lib/postgresql/data
+    env_file: .env
+
   nginx:
     build:
       context: ./nginx
@@ -31,5 +76,5 @@ services:
       - ./core/static:/var/www/backend/static
       - ./core/media:/var/www/backend/media
     depends_on:
-      - 'backend'
+      - backend
 
