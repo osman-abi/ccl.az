@@ -174,7 +174,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 if DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, "static/snippet")
+    STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 else:
     STATICFILES_DIRS = [
         os.path.join(BASE_DIR, "static/")
