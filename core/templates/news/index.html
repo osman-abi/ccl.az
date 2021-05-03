@@ -1,5 +1,4 @@
-{% load static %}
-{% load i18n %}
+{% load static %} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,48 +15,21 @@
       crossorigin="anonymous"
     />
 
+    <link href="{% static 'css_news/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/flaticon.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/slick-slider.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/prettyphoto.css' %}" rel="stylesheet" />
     <link
-      href="{% static 'snippet/css_news/bootstrap.css' %}"
+      href="{% static 'css_news/mediaelementplayer.css' %}"
       rel="stylesheet"
     />
-    <link
-      href="{% static 'snippet/css_news/font-awesome.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'snippet/css_news/flaticon.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'snippet/css_news/slick-slider.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'snippet/css_news/prettyphoto.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'snippet/css_news/mediaelementplayer.css' %}"
-      rel="stylesheet"
-    />
-    <link href="{% static 'snippet/css_news/style.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/color.css' %}" rel="stylesheet" />
-    <link
-      href="{% static 'snippet/css_news/color-two.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'snippet/css_news/color-three.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'snippet/css_news/color-four.css' %}"
-      rel="stylesheet"
-    />
-    <link
-      href="{% static 'snippet/css_news/responsive.css' %}"
-      rel="stylesheet"
-    />
+    <link href="{% static 'css_news/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color-two.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color-three.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color-four.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/responsive.css' %}" rel="stylesheet" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -73,100 +45,125 @@
 
   <body>
     <div class="wm-main-wrapper">
-     <header id="wm-header" class="wm-header-one">
-
-<div class="wm-topsection">
-<div class="container">
-<div class="row">
-  {% for logo in logos %}
-  <div class="col-md-3"><a href="#" class="wm-logo"><img src="{{logo.image.url}}" alt=""></a></div>  
-  {% endfor %}
-<div class="col-md-9">
-  <ul class="wm-topinfo">
-  {% for contact in contacts %}
-  <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
-  <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
-  {% endfor %}
-   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">English <i class="fa fa-angle-down"></i></a>
-                  <ul class="wm-language-popup">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                      {% for lang in languages %}
-                    <li><a class="lang" href="{% url 'select_language' lang.code %}">{{ lang.code }}</a></li>
+      <header id="wm-header" class="wm-header-one">
+        <div class="wm-topsection">
+          <div class="container">
+            <div class="row">
+              {% for logo in logos %}
+              <div class="col-md-3">
+                <a href="#" class="wm-logo"
+                  ><img src="{{logo.image.url}}" alt=""
+                /></a>
+              </div>
+              {% endfor %}
+              <div class="col-md-9">
+                <ul class="wm-topinfo">
+                  {% for contact in contacts %}
+                  <li>
+                    <i class="fa fa-map-marker-alt"></i>
+                    <span>{{contact.address}}</span>
+                  </li>
+                  <li>
+                    <i class="flaticon-technology"></i>
+                    <span>{{contact.phone_number}}</span>
+                  </li>
+                  {% endfor %}
+                  <li>
+                    <i class="flaticon-nation"></i>
+                    <a id="langCURRENT" href="#"
+                      >English <i class="fa fa-angle-down"></i
+                    ></a>
+                    <ul class="wm-language-popup">
+                      {% get_current_language as LANGUAGE_CODE %} {%
+                      get_available_languages as LANGUAGES %} {%
+                      get_language_info_list for LANGUAGES as languages %} {%
+                      for lang in languages %}
+                      <li>
+                        <a
+                          class="lang"
+                          href="{% url 'select_language' lang.code %}"
+                          >{{ lang.code }}</a
+                        >
+                      </li>
                       {% endfor %}
-                  </ul>
+                    </ul>
 
+                    {# #} {# <input type="submit" value="{{lang.code}}" {% if
+                    lang.code == LANGUAGE_CODE %} disabled {% endif %}
+                    name="language"/>#} {# {% endfor %}#}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-{#  #}
-{#  <input type="submit" value="{{lang.code}}" {% if lang.code == LANGUAGE_CODE %} disabled {% endif %} name="language"/>#}
-{#  {% endfor %}#}
+        <script>
+          console.clear();
+          var langOptions = document.querySelectorAll(".lang");
+          for (const lang of langOptions) {
+            lang.addEventListener("click", () => {
+              document.getElementById("langCURRENT").innerHTML = lang.innerHTML;
+              console.info(lang.innerHTML);
+            });
+          }
+        </script>
 
-
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-    <script>
-        console.clear();
-        var langOptions = document.querySelectorAll(".lang")
-        for (const lang of langOptions) {
-          lang.addEventListener('click',()=>{
-            document.getElementById('langCURRENT').innerHTML = lang.innerHTML;
-            console.info(lang.innerHTML);
-          })
-        }
-    </script>
-
-<div class="wm-navsection">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="wm-navinner-section">
-
-
-
-<nav class="navbar navbar-default">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-</div>
-<div class="collapse navbar-collapse" id="navbar-collapse-1" style="display: block;">
-
-<ul class="nav navbar-nav" style="flex-direction: row;" >
-
-  <li class="menu-item active"><a href="{% url 'home' %}">{% trans "Home" %}</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'services' %}">{% trans "Services" %}</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'about' %}">About</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'blogs' %}">News</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'contact' %}">Contact</a>
-</li>
-
-</ul>
-</div>
-</nav>
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</header>
+        <div class="wm-navsection">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="wm-navinner-section">
+                  <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                      <button
+                        type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#navbar-collapse-1"
+                        aria-expanded="true"
+                      >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    </div>
+                    <div
+                      class="collapse navbar-collapse"
+                      id="navbar-collapse-1"
+                      style="display: block"
+                    >
+                      <ul class="nav navbar-nav" style="flex-direction: row">
+                        <li class="menu-item active">
+                          <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'services' %}"
+                            >{% trans "Services" %}</a
+                          >
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'clients' %}">Our Clients</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'blogs' %}">News</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'contact' %}">Contact</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
       <div class="wm-mini-header">
         <div class="container">
@@ -199,7 +196,7 @@
                         <figcaption>
                           <a href="{% url 'blog_detail' page.id %}"
                             ><img
-                              src="{% static 'snippet/img_news/plusicon.png' %}"
+                              src="{% static 'img_news/plusicon.png' %}"
                               alt=""
                           /></a>
                         </figcaption>
@@ -233,12 +230,12 @@
                       <figure>
                         <a href="news_template.html"
                           ><img
-                            src="{% static 'snippet/img_news/latest-news-grid-2.jpg' %}"
+                            src="{% static 'img_news/latest-news-grid-2.jpg' %}"
                             alt=""
                         /></a>
                         <figcaption>
                           <a href="news_template.html"
-                            ><img src="{% static 'snippet/img_news/plusicon.png' %}" alt=""
+                            ><img src="{% static 'img_news/plusicon.png' %}" alt=""
                           /></a>
                         </figcaption>
                       </figure>
@@ -266,12 +263,12 @@
                       <figure>
                         <a href="news_template.html"
                           ><img
-                            src="{% static 'snippet/img_news/latest-news-grid-3.jpg' %}"
+                            src="{% static 'img_news/latest-news-grid-3.jpg' %}"
                             alt=""
                         /></a>
                         <figcaption>
                           <a href="news_template.html"
-                            ><img src="{% static 'snippet/img_news/plusicon.png' %}" alt=""
+                            ><img src="{% static 'img_news/plusicon.png' %}" alt=""
                           /></a>
                         </figcaption>
                       </figure>
@@ -299,12 +296,12 @@
                       <figure>
                         <a href="news_template.html"
                           ><img
-                            src="{% static 'snippet/img_news/latest-news-grid-4.jpg' %}"
+                            src="{% static 'img_news/latest-news-grid-4.jpg' %}"
                             alt=""
                         /></a>
                         <figcaption>
                           <a href="news_template.html"
-                            ><img src="{% static 'snippet/img_newsplusicon.png' %}" alt=""
+                            ><img src="{% static 'img_newsplusicon.png' %}" alt=""
                           /></a>
                         </figcaption>
                       </figure>
@@ -332,12 +329,12 @@
                       <figure>
                         <a href="news_template.html"
                           ><img
-                            src="{% static 'snippet/img_news/latest-news-grid-5.jpg' %}"
+                            src="{% static 'img_news/latest-news-grid-5.jpg' %}"
                             alt=""
                         /></a>
                         <figcaption>
                           <a href="news_template.html"
-                            ><img src="{% static 'snippet/img_news/plusicon.png' %}" alt=""
+                            ><img src="{% static 'img_news/plusicon.png' %}" alt=""
                           /></a>
                         </figcaption>
                       </figure>
@@ -364,12 +361,12 @@
                       <figure>
                         <a href="news_template.html"
                           ><img
-                            src="{% static 'snippet/img_news/latest-news-grid-6.jpg' %}"
+                            src="{% static 'img_news/latest-news-grid-6.jpg' %}"
                             alt=""
                         /></a>
                         <figcaption>
                           <a href="news_template.html"
-                            ><img src="{% static 'snippet/img_news/plusicon.png' %}" alt=""
+                            ><img src="{% static 'img_news/plusicon.png' %}" alt=""
                           /></a>
                         </figcaption>
                       </figure>
@@ -396,12 +393,12 @@
                       <figure>
                         <a href="news_template.html"
                           ><img
-                            src="{% static 'snippet/img_news/latest-news-grid-7.jpg' %}"
+                            src="{% static 'img_news/latest-news-grid-7.jpg' %}"
                             alt=""
                         /></a>
                         <figcaption>
                           <a href="news_template.html"
-                            ><img src="{% static 'snippet/img_news/plusicon.png' %}" alt=""
+                            ><img src="{% static 'img_news/plusicon.png' %}" alt=""
                           /></a>
                         </figcaption>
                       </figure>
@@ -429,12 +426,12 @@
                       <figure>
                         <a href="news_template.html"
                           ><img
-                            src="{% static 'snippet/img_news/latest-news-grid-8.jpg' %}"
+                            src="{% static 'img_news/latest-news-grid-8.jpg' %}"
                             alt=""
                         /></a>
                         <figcaption>
                           <a href="news_template.html"
-                            ><img src="{% static 'snippet/img_news/plusicon.png' %}" alt=""
+                            ><img src="{% static 'img_news/plusicon.png' %}" alt=""
                           /></a>
                         </figcaption>
                       </figure>
@@ -460,7 +457,6 @@
                     </li> -->
                   </ul>
                 </div>
-                
 
                 <!--  -->
                 <div class="wm-pagination-blog">
@@ -468,7 +464,10 @@
                   <ul>
                     {% if pages.has_previous %}
                     <li>
-                      <a href="?page={{ pages.previous_page_number }}" aria-label="Previous">
+                      <a
+                        href="?page={{ pages.previous_page_number }}"
+                        aria-label="Previous"
+                      >
                         <i class="flaticon-arrows-1"></i>
                       </a>
                     </li>
@@ -478,17 +477,17 @@
                         <i class="flaticon-arrows-1"></i>
                       </a>
                     </li>
-                    {% endif %}
-                    {% for i in pages.paginator.page_range %}
-                    {% if pages.number == i %}
+                    {% endif %} {% for i in pages.paginator.page_range %} {% if
+                    pages.number == i %}
                     <li class="active"><a href="#"> {{i}} </a></li>
                     {% else %}
                     <li><a href="?page={{ i }}">{{i}}</a></li>
-                    {% endif %}
-                    {% endfor %}
-                    {% if pages.has_next %}
+                    {% endif %} {% endfor %} {% if pages.has_next %}
                     <li>
-                      <a href="?page={{ pages.next_page_number }}" aria-label="Next">
+                      <a
+                        href="?page={{ pages.next_page_number }}"
+                        aria-label="Next"
+                      >
                         <i class="flaticon-arrows-1"></i>
                       </a>
                     </li>
@@ -699,52 +698,52 @@
       data-cfasync="false"
       src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
     ></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/jquery.js' %}"></script> -->
+    <script type="text/javascript" src="{% static 'js_news/jquery.js' %}"></script> -->
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/modernizr.js' %}"
+      src="{% static 'js_news/modernizr.js' %}"
     ></script>
-    <!-- <script type="text/javascript" src="{% static 'snippet/js_news/bootstrap.min.js' %}"></script> -->
+    <!-- <script type="text/javascript" src="{% static 'js_news/bootstrap.min.js' %}"></script> -->
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/jquery.prettyphoto.js' %}"
-    ></script>
-    <script
-      type="text/javascript"
-      src="{% static 'snippet/js_news/jquery.countdown.min.js' %}"
+      src="{% static 'js_news/jquery.prettyphoto.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/fitvideo.js' %}"
+      src="{% static 'js_news/jquery.countdown.min.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/skills.js' %}"
+      src="{% static 'js_news/fitvideo.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/slick.slider.min.js' %}"
+      src="{% static 'js_news/skills.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/waypoints-min.js' %}"
+      src="{% static 'js_news/slick.slider.min.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/mediaelement-and-player.min.js' %}"
+      src="{% static 'js_news/waypoints-min.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/jquery.nicescroll.min.js' %}"
-    ></script>
-    <!-- <script type="text/javascript" src="{% static 'snippet/js_news/jquery-ui.js' %}"></script> -->
-    <script
-      type="text/javascript"
-      src="{% static 'snippet/js_news/isotope.min.js' %}"
+      src="{% static 'js_news/mediaelement-and-player.min.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/functions.js' %}"
+      src="{% static 'js_news/jquery.nicescroll.min.js' %}"
+    ></script>
+    <!-- <script type="text/javascript" src="{% static 'js_news/jquery-ui.js' %}"></script> -->
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/isotope.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/functions.js' %}"
     ></script>
   </body>
 </html>

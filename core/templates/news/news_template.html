@@ -1,5 +1,4 @@
-{% load static %}
-{% load i18n %}
+{% load static %} {% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,19 +8,27 @@
 
     <title>Our Clients</title>
 
-    <link href="{% static 'snippet/css_news/bootstrap.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/font-awesome.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/flaticon.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/slick-slider.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/prettyphoto.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/mediaelementplayer.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/style.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/color.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/color-two.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/color-three.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/color-four.css' %}" rel="stylesheet" />
-    <link href="{% static 'snippet/css_news/responsive.css' %}" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link href="{% static 'css_news/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/font-awesome.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/flaticon.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/slick-slider.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/prettyphoto.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'css_news/mediaelementplayer.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'css_news/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color-two.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color-three.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/color-four.css' %}" rel="stylesheet" />
+    <link href="{% static 'css_news/responsive.css' %}" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
 
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -31,100 +38,125 @@
 
   <body>
     <div class="wm-main-wrapper">
-        <header id="wm-header" class="wm-header-one">
-
-<div class="wm-topsection">
-<div class="container">
-<div class="row">
-  {% for logo in logos %}
-  <div class="col-md-3"><a href="#" class="wm-logo"><img src="{{logo.image.url}}" alt=""></a></div>
-  {% endfor %}
-<div class="col-md-9">
-  <ul class="wm-topinfo">
-  {% for contact in contacts %}
-  <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
-  <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
-  {% endfor %}
-   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">English <i class="fa fa-angle-down"></i></a>
-                  <ul class="wm-language-popup">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-                    {% get_language_info_list for LANGUAGES as languages %}
-                      {% for lang in languages %}
-                    <li><a class="lang" href="{% url 'select_language' lang.code %}">{{ lang.code }}</a></li>
+      <header id="wm-header" class="wm-header-one">
+        <div class="wm-topsection">
+          <div class="container">
+            <div class="row">
+              {% for logo in logos %}
+              <div class="col-md-3">
+                <a href="#" class="wm-logo"
+                  ><img src="{{logo.image.url}}" alt=""
+                /></a>
+              </div>
+              {% endfor %}
+              <div class="col-md-9">
+                <ul class="wm-topinfo">
+                  {% for contact in contacts %}
+                  <li>
+                    <i class="fa fa-map-marker-alt"></i>
+                    <span>{{contact.address}}</span>
+                  </li>
+                  <li>
+                    <i class="flaticon-technology"></i>
+                    <span>{{contact.phone_number}}</span>
+                  </li>
+                  {% endfor %}
+                  <li>
+                    <i class="flaticon-nation"></i>
+                    <a id="langCURRENT" href="#"
+                      >English <i class="fa fa-angle-down"></i
+                    ></a>
+                    <ul class="wm-language-popup">
+                      {% get_current_language as LANGUAGE_CODE %} {%
+                      get_available_languages as LANGUAGES %} {%
+                      get_language_info_list for LANGUAGES as languages %} {%
+                      for lang in languages %}
+                      <li>
+                        <a
+                          class="lang"
+                          href="{% url 'select_language' lang.code %}"
+                          >{{ lang.code }}</a
+                        >
+                      </li>
                       {% endfor %}
-                  </ul>
+                    </ul>
 
+                    {# #} {# <input type="submit" value="{{lang.code}}" {% if
+                    lang.code == LANGUAGE_CODE %} disabled {% endif %}
+                    name="language"/>#} {# {% endfor %}#}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
 
-{#  #}
-{#  <input type="submit" value="{{lang.code}}" {% if lang.code == LANGUAGE_CODE %} disabled {% endif %} name="language"/>#}
-{#  {% endfor %}#}
+        <script>
+          console.clear();
+          var langOptions = document.querySelectorAll(".lang");
+          for (const lang of langOptions) {
+            lang.addEventListener("click", () => {
+              document.getElementById("langCURRENT").innerHTML = lang.innerHTML;
+              console.info(lang.innerHTML);
+            });
+          }
+        </script>
 
-
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-    <script>
-        console.clear();
-        var langOptions = document.querySelectorAll(".lang")
-        for (const lang of langOptions) {
-          lang.addEventListener('click',()=>{
-            document.getElementById('langCURRENT').innerHTML = lang.innerHTML;
-            console.info(lang.innerHTML);
-          })
-        }
-    </script>
-
-<div class="wm-navsection">
-<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="wm-navinner-section">
-
-
-
-<nav class="navbar navbar-default">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="true">
-<span class="sr-only">Toggle navigation</span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-</div>
-<div class="collapse navbar-collapse" id="navbar-collapse-1" style="display: block;">
-
-<ul class="nav navbar-nav" style="flex-direction: row;" >
-
-  <li class="menu-item active"><a href="{% url 'home' %}">{% trans "Home" %}</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'services' %}">{% trans "Services" %}</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'about' %}">About</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'blogs' %}">News</a>
-  </li>
-  <li class="menu-item"><a href="{% url 'contact' %}">Contact</a>
-</li>
-
-</ul>
-</div>
-</nav>
-
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-</header>
+        <div class="wm-navsection">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="wm-navinner-section">
+                  <nav class="navbar navbar-default">
+                    <div class="navbar-header">
+                      <button
+                        type="button"
+                        class="navbar-toggle collapsed"
+                        data-toggle="collapse"
+                        data-target="#navbar-collapse-1"
+                        aria-expanded="true"
+                      >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                    </div>
+                    <div
+                      class="collapse navbar-collapse"
+                      id="navbar-collapse-1"
+                      style="display: block"
+                    >
+                      <ul class="nav navbar-nav" style="flex-direction: row">
+                        <li class="menu-item active">
+                          <a href="{% url 'home' %}">{% trans "Home" %}</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'services' %}"
+                            >{% trans "Services" %}</a
+                          >
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'clients' %}">Our Clients</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'about' %}">About</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'blogs' %}">News</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="{% url 'contact' %}">Contact</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
       <div class="wm-mini-header">
         <div class="container">
@@ -212,104 +244,178 @@
       </div>
 
       <footer id="wm-footer" class="wm-footer-one">
-
         <div class="wm-footer-topsec">
-        <div class="container">
-        <div class="row">
-        <div class="col-md-6">
-        <div class="wm-newslatter">
-        <div class="wm-footer-title">
-        <h4>01</h4>
-        <h2>Newsletter</h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="wm-newslatter">
+                  <div class="wm-footer-title">
+                    <h4>01</h4>
+                    <h2>Newsletter</h2>
+                  </div>
+                  <p>
+                    Be the first to subscribe to our newsletter and get latest
+                    news from Advisor.
+                  </p>
+                  <form>
+                    <input
+                      type="text"
+                      value="E-mail Address"
+                      onblur="if(this.value == '') { this.value ='E-mail Address'; }"
+                      onfocus="if(this.value =='E-mail Address') { this.value = ''; }"
+                    />
+                    <div class="clearfix"></div>
+                    <label><input type="submit" value="Subscribe" /></label>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="wm-footer-contactinfo">
+                  <div class="wm-footer-title">
+                    <h4>02</h4>
+                    <h2>Contact Info</h2>
+                  </div>
+                  <ul>
+                    <li>
+                      E-mail:
+                      <a
+                        href="/cdn-cgi/l/email-protection#b1dfd0dcd4f1d4dcd0d8dd9fd2dedc"
+                        ><span
+                          class="__cf_email__"
+                          data-cfemail="e78e898188a78683918e94889594929797889593c984888a"
+                          >[email&#160;protected]</span
+                        ></a
+                      >
+                    </li>
+                    <li>Phone: <span>(012) 345-6789</span></li>
+                    <li>
+                      Address:
+                      <a
+                        href="/cdn-cgi/l/email-protection#3e505f535b7e5b535f5752105d5153"
+                        ><span
+                          class="__cf_email__"
+                          data-cfemail="2b42454d446b4a4f5d42584459585e5b5b44595f05484446"
+                          >[email&#160;protected]</span
+                        ></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <p>Be the first to subscribe to our newsletter and get latest news from Advisor.</p>
-        <form>
-        <input type="text" value="E-mail Address" onblur="if(this.value == '') { this.value ='E-mail Address'; }" onfocus="if(this.value =='E-mail Address') { this.value = ''; }">
-        <div class="clearfix"></div>
-        <label><input type="submit" value="Subscribe"></label>
-        </form>
-        </div>
-        </div>
-        <div class="col-md-6">
-        <div class="wm-footer-contactinfo">
-        <div class="wm-footer-title">
-        <h4>02</h4>
-        <h2>Contact Info</h2>
-        </div>
-        <ul>
-        <li>E-mail: <a href="/cdn-cgi/l/email-protection#b1dfd0dcd4f1d4dcd0d8dd9fd2dedc"><span class="__cf_email__" data-cfemail="e78e898188a78683918e94889594929797889593c984888a">[email&#160;protected]</span></a></li>
-        <li>Phone: <span>(012) 345-6789</span></li>
-        <li>Address: <a href="/cdn-cgi/l/email-protection#3e505f535b7e5b535f5752105d5153"><span class="__cf_email__" data-cfemail="2b42454d446b4a4f5d42584459585e5b5b44595f05484446">[email&#160;protected]</span></a></li>
-        </ul>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        
+
         <div class="wm-footer-bottomsec">
-        <span class="wm-footer-transparent"></span>
-        <div class="container">
-        <div class="row">
-        <div class="col-md-7">
-        <div class="wm-footer-widget-area">
-        <div class="row">
-        <div class="col-md-8 widget wm_about_widget">
-        <a href="#" class="wm-footer-logo"><img src="/img/logo-1.png" alt=""></a>
-        <p>Advisor is one of the world’s leading management consulting companies, one which combines classic management consulting with expertise.</p>
-        <ul class="wm-social-links">
-        <li><a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-        <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-        <li><a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i> Youtube</a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
-        </ul>
+          <span class="wm-footer-transparent"></span>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-7">
+                <div class="wm-footer-widget-area">
+                  <div class="row">
+                    <div class="col-md-8 widget wm_about_widget">
+                      <a href="#" class="wm-footer-logo"
+                        ><img src="/img/logo-1.png" alt=""
+                      /></a>
+                      <p>
+                        Advisor is one of the world’s leading management
+                        consulting companies, one which combines classic
+                        management consulting with expertise.
+                      </p>
+                      <ul class="wm-social-links">
+                        <li>
+                          <a href="#" target="_blank"
+                            ><i class="fab fa-facebook"></i> Facebook</a
+                          >
+                        </li>
+                        <li>
+                          <a href="https://twitter.com/" target="_blank"
+                            ><i class="fab fa-twitter"></i> Twitter</a
+                          >
+                        </li>
+                        <li>
+                          <a href="https://youtube.com/" target="_blank"
+                            ><i class="fab fa-youtube"></i> Youtube</a
+                          >
+                        </li>
+                        <li>
+                          <a href="https://www.linkedin.com/" target="_blank"
+                            ><i class="fab fa-linkedin"></i> Linkedin</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="col-md-4 widget widget_archive">
+                      <div class="wm-footer-widgettitle">
+                        <h2>Useful Links</h2>
+                      </div>
+                      <ul>
+                        <li><a href="#">Company History</a></li>
+                        <li><a href="#">Our Approach</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Careers</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-5">
+                <div class="wm-footer-form">
+                  <div class="wm-footer-widgettitle"><h2>Contact Us</h2></div>
+                  <form>
+                    <ul>
+                      <li>
+                        <input
+                          type="text"
+                          value="Your Name"
+                          onblur="if(this.value == '') { this.value ='Your Name'; }"
+                          onfocus="if(this.value =='Your Name') { this.value = ''; }"
+                        />
+                      </li>
+                      <li>
+                        <input
+                          type="text"
+                          value="Your Email"
+                          onblur="if(this.value == '') { this.value ='Your Email'; }"
+                          onfocus="if(this.value =='Your Email') { this.value = ''; }"
+                        />
+                      </li>
+                      <li>
+                        <input
+                          type="text"
+                          value="Your Phone"
+                          onblur="if(this.value == '') { this.value ='Your Phone'; }"
+                          onfocus="if(this.value =='Your Phone') { this.value = ''; }"
+                        />
+                      </li>
+                      <li><textarea placeholder="Your Message"></textarea></li>
+                      <li>
+                        <label><input type="submit" value="Send Now" /></label>
+                      </li>
+                    </ul>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-4 widget widget_archive">
-        <div class="wm-footer-widgettitle"> <h2>Useful Links</h2> </div>
-        <ul>
-        <li><a href="#">Company History</a></li>
-        <li><a href="#">Our Approach</a></li>
-        <li><a href="#">Partners</a></li>
-        <li><a href="#">Our Team</a></li>
-        <li><a href="#">Case Studies</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Careers</a></li>
-        </ul>
-        </div>
-        </div>
-        </div>
-        </div>
-        <div class="col-md-5">
-        <div class="wm-footer-form">
-        <div class="wm-footer-widgettitle"> <h2>Contact Us</h2> </div>
-        <form>
-        <ul>
-        <li><input type="text" value="Your Name" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
-        <li><input type="text" value="Your Email" onblur="if(this.value == '') { this.value ='Your Email'; }" onfocus="if(this.value =='Your Email') { this.value = ''; }"></li>
-        <li><input type="text" value="Your Phone" onblur="if(this.value == '') { this.value ='Your Phone'; }" onfocus="if(this.value =='Your Phone') { this.value = ''; }"></li>
-        <li><textarea placeholder="Your Message"></textarea></li>
-        <li><label><input type="submit" value="Send Now"></label></li>
-        </ul>
-        </form>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        
+
         <div class="wm-copyright-section">
-        <div class="container">
-        <div class="row">
-        <div class="col-md-12">
-        <p>© 2021, All Right Reserved - by <a href="#" class="wm-color">Company</a></p>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <p>
+                  © 2021, All Right Reserved - by
+                  <a href="#" class="wm-color">Company</a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-        </div>
-        
-        </footer>
+      </footer>
 
       <div class="clearfix"></div>
     </div>
@@ -318,28 +424,61 @@
       data-cfasync="false"
       src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
     ></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/jquery.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/modernizr.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/bootstrap.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/jquery.prettyphoto.js' %}"></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/jquery.countdown.min.js' %}"
-    ></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/fitvideo.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/skills.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/slick.slider.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/waypoints-min.js' %}"></script>
-    <script
-      type="text/javascript"
-      src="{% static 'snippet/js_news/mediaelement-and-player.min.js' %}"
+      src="{% static 'js_news/jquery.js' %}"
     ></script>
     <script
       type="text/javascript"
-      src="{% static 'snippet/js_news/jquery.nicescroll.min.js' %}"
+      src="{% static 'js_news/modernizr.js' %}"
     ></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/jquery-ui.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/isotope.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'snippet/js_news/functions.js' %}"></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/bootstrap.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/jquery.prettyphoto.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/jquery.countdown.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/fitvideo.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/skills.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/slick.slider.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/waypoints-min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/mediaelement-and-player.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/jquery.nicescroll.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/jquery-ui.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/isotope.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js_news/functions.js' %}"
+    ></script>
   </body>
 </html>

@@ -40,9 +40,9 @@ jQuery(document).ready(function ($) {
     dots: false,
     vertical: true,
     prevArrow:
-      "<span class='slick-arrow-left'><img src='/static/snippet/img_index/banner-arrow-1.png' alt=''></span>",
+      "<span class='slick-arrow-left'><img src='/static/img_index/banner-arrow-1.png' alt=''></span>",
     nextArrow:
-      "<span class='slick-arrow-right'><img src='/static/snippet/img_index/banner-arrow-2.png' alt=''></span>",
+      "<span class='slick-arrow-right'><img src='/static/img_index/banner-arrow-2.png' alt=''></span>",
     centerMode: true,
     focusOnSelect: true,
     responsive: [

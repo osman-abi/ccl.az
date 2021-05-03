@@ -12,18 +12,18 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
   integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
-<link href="{% static 'snippet/css_index/bootstrap.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/font-awesome.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/flaticon.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/slick-slider.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/prettyphoto.css' %}" rel="stylesheet">
-<!-- <link href="{% static 'snippet/css_index/mediaelementplayer.css' %}" rel="stylesheet"> -->
-<link href="{% static 'snippet/css_index/style.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/color.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/color-two.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/color-three.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/color-four.css' %}" rel="stylesheet">
-<link href="{% static 'snippet/css_index/responsive.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/font-awesome.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/flaticon.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/slick-slider.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/prettyphoto.css' %}" rel="stylesheet">
+<!-- <link href="{% static 'css_index/mediaelementplayer.css' %}" rel="stylesheet"> -->
+<link href="{% static 'css_index/style.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/color.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/color-two.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/color-three.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/color-four.css' %}" rel="stylesheet">
+<link href="{% static 'css_index/responsive.css' %}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 
 <!--[if lt IE 9]>
@@ -154,11 +154,11 @@
   {% for slide in slides %}
   <div class="wm-banner-nav-layer"><a href="#"><img src="{{slide.image.url}}" alt=""></a></div>
   {% endfor %}
-<!-- <div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'snippet/img_index/banner-thumb-2.jpg' %}" alt=""></a></div>
-<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'snippet/img_index/banner-thumb-3.jpg' %}" alt=""></a></div>
-<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'snippet/img_index/banner-thumb-4.jpg' %}" alt=""></a></div>
-<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'snippet/img_index/banner-thumb-5.jpg' %}" alt=""></a></div>
-<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'snippet/img_index/banner-thumb-3.jpg' %}" alt=""></a></div> -->
+<!-- <div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'img_index/banner-thumb-2.jpg' %}" alt=""></a></div>
+<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'img_index/banner-thumb-3.jpg' %}" alt=""></a></div>
+<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'img_index/banner-thumb-4.jpg' %}" alt=""></a></div>
+<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'img_index/banner-thumb-5.jpg' %}" alt=""></a></div>
+<div class="wm-banner-nav-layer"><a href="#"><img src="{% static 'img_index/banner-thumb-3.jpg' %}" alt=""></a></div> -->
 </div>
 </div>
 </div>
@@ -171,7 +171,7 @@
 <div class="col-md-12"> <div class="wm-fancy-title"> <h2>{% trans "Your business can get smarter." %}</h2> </div> </div>
 <div class="col-md-5">
 <div class="wm-service-add">
-<img src="{% static 'snippet/img_index/service-thumb.jpg' %}" alt="">
+<img src="{% static 'img_index/service-thumb.jpg' %}" alt="">
 <h2>Request a free consultation today!</h2>
 <div class="clearfix"></div>
 <a href="#wm-footer" class="wm-simple-btn wm-bgcolorhover">Request Consultation <i class="fa fa-angle-right"></i></a>
@@ -248,7 +248,7 @@
 
 <!-- <div class="wm-service-slider-wrap">
 <div class="wm-service-layer">
-<figure><a href="#"><img src="{% static 'snippet/img_index/slider-service-2.jpg' %}" alt=""></a>
+<figure><a href="#"><img src="{% static 'img_index/slider-service-2.jpg' %}" alt=""></a>
 <figcaption><a href="#">See All Services <i class="flaticon-arrows-1"></i></a></figcaption>
 </figure>
 <div class="wm-service-text">
@@ -259,7 +259,7 @@
 </div>
 <div class="wm-service-slider-wrap">
 <div class="wm-service-layer">
-<figure><a href="#"><img src="{% static 'snippet/img_index/slider-service-3.jpg' %}" alt=""></a>
+<figure><a href="#"><img src="{% static 'img_index/slider-service-3.jpg' %}" alt=""></a>
 <figcaption><a href="#">See All Services <i class="flaticon-arrows-1"></i></a></figcaption>
 </figure>
 <div class="wm-service-text">
@@ -270,7 +270,7 @@
 </div>
 <div class="wm-service-slider-wrap">
 <div class="wm-service-layer">
-<figure><a href="#"><img src="{% static 'snippet/img_index/slider-service-4.jpg' %}" alt=""></a>
+<figure><a href="#"><img src="{% static 'img_index/slider-service-4.jpg' %}" alt=""></a>
 <figcaption><a href="#">See All Services <i class="flaticon-arrows-1"></i></a></figcaption>
 </figure>
 <div class="wm-service-text">
@@ -295,7 +295,7 @@
 <div class="wm-blog wm-blogfeatured">
 <ul class="row">
 <li class="col-md-12">
-<figure><a href="#"><img src="{% static 'snippet/img_index/featured-blogpost-1.jpg' %}" alt=""></a></figure>
+<figure><a href="#"><img src="{% static 'img_index/featured-blogpost-1.jpg' %}" alt=""></a></figure>
 <div class="wm-blogfeatured-text">
 <h2><a href="#">Consulting poll: Have you been to France?</a></h2>
 <ul class="wm-post-options">
@@ -593,18 +593,18 @@ Read More
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
   integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="{% static 'snippet/js_index/modernizr.js' %}"></script>
-<script type="text/javascript" src="{% static 'snippet/js_index/bootstrap.min.js' %}"></script> -->
-<script type="text/javascript" src="{% static 'snippet/js_index/jquery.prettyphoto.js' %}"></script>
-<script type="text/javascript" src="{% static 'snippet/js_index/jquery.countdown.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'snippet/js_index/fitvideo.js' %}"></script>
-<script type="text/javascript" src="{% static 'snippet/js_index/skills.js' %}"></script>
-<script type="text/javascript" src="{% static 'snippet/js_index/slick.slider.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'snippet/js_index/waypoints-min.js' %}"></script>
-<!-- <script type="text/javascript" src="{% static 'snippet/js_index/mediaelement-and-player.min.js' %}"></script> -->
-<script type="text/javascript" src="{% static 'snippet/js_index/jquery.nicescroll.min.js' %}"></script>
-<!-- <script type="text/javascript" src="{% static 'snippet/js_index/jquery-ui.js' %}"></script> -->
-<script type="text/javascript" src="{% static 'snippet/js_index/isotope.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'snippet/js_index/functions.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/modernizr.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/bootstrap.min.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'js_index/jquery.prettyphoto.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/jquery.countdown.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/fitvideo.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/skills.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/slick.slider.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/waypoints-min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'js_index/mediaelement-and-player.min.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'js_index/jquery.nicescroll.min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'js_index/jquery-ui.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'js_index/isotope.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js_index/functions.js' %}"></script>
 </body>
 </html>

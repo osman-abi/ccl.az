@@ -2425,7 +2425,7 @@ ul li:hover .wm-readmore {
   width: 100%;
   padding: 140px 86px;
   border: 3px solid #f3f3f3;
-  background: url(/static/snippet/img_index/map.png);
+  background: url(/static/img_index/map.png);
   background-position: 95% 50%;
   background-repeat: no-repeat;
 }
@@ -4775,14 +4775,15 @@ aside .widget {
   margin: 0 25px;
 }
 li.active a {
-  color: #26a4de!important;
+  color: #26a4de !important;
   font-weight: 600;
 }
 
 .navbar-nav li a:hover:not(.fa) {
   letter-spacing: 4px;
 }
-.wm-footer-bottomsec li,.wm-footer-bottomsec a {
+.wm-footer-bottomsec li,
+.wm-footer-bottomsec a {
   font-family: "Font Awesome 5 Free";
 }
 
