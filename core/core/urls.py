@@ -27,7 +27,7 @@ urlpatterns = [
 ]
 
 urlpatterns += i18n_patterns(
-    path('admin/', admin.site.urls),
+    path('4dm1n/', admin.site.urls),
     path('', include('homepage.urls')),
     path('haqqimizda/', include('aboutpage.urls')),
     path('contact/', include('contactpage.urls')),
