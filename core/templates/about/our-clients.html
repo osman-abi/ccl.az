@@ -87,10 +87,6 @@
                       </li>
                       {% endfor %}
                     </ul>
-
-                    {# #} {# <input type="submit" value="{{lang.code}}" {% if
-                    lang.code == LANGUAGE_CODE %} disabled {% endif %}
-                    name="language"/>#} {# {% endfor %}#}
                   </li>
                 </ul>
               </div>
@@ -144,16 +140,20 @@
                           >
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'clients' %}">Our Clients</a>
+                          <a href="{% url 'clients' %}"
+                            >{%trans 'Our Clients'%}</a
+                          >
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'about' %}">About</a>
+                          <a href="{% url 'about' %}">{%trans 'About' %}</a>
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'blogs' %}">News</a>
+                          <a href="{% url 'blogs' %}">{% trans 'News'%}</a>
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'contact' %}">Contact</a>
+                          <a href="{% url 'contact' %}"
+                            >{% trans 'Contact' %}</a
+                          >
                         </li>
                       </ul>
                     </div>
@@ -187,58 +187,56 @@
             <div class="row">
               <aside class="col-md-3">
                 <div class="widget widget_client-nav">
+                  {#
                   <ul>
+                    #} {#
                     <li>
-                      <a href="company-history.html">Our Company History</a>
+                      #} {#
+                      <a href="company-history.html">Our Company History</a>#}
+                      {#
                     </li>
+                    #} {#
                     <li><a href="our-strategy.html">Our Strategy</a></li>
+                    #} {#
                     <li><a href="our-clients.html">Our Clients</a></li>
+                    #} {#
                     <li>
-                      <a href="careers-job-listing.html">Our Job Listings</a>
+                      #} {#
+                      <a href="careers-job-listing.html">Our Job Listings</a>#}
+                      {#
                     </li>
+                    #} {#
                     <li><a href="our-team-full-width.html">Our Team</a></li>
+                    #} {#
                     <li><a href="careers-vacancy.html">Vacancy</a></li>
+                    #} {#
                   </ul>
+                  #}
                 </div>
               </aside>
-              <div class="col-md-9">
+              <div class="col-md-12">
                 <div class="wm-client-slide">
+                  {% for image in images %}
                   <div class="wm-client-thumb">
                     <figure>
-                      <img
-                        src="{% static 'img_about/client-slide.jpg'%}"
-                        alt=""
-                      />
+                      <img src="{{image.image.url}}" alt="" />
                     </figure>
                   </div>
-                  <div class="wm-client-thumb">
-                    <figure>
-                      <img
-                        src="{% static 'img_about/client-slide.jpg'%}"
-                        alt=""
-                      />
-                    </figure>
-                  </div>
-                  <div class="wm-client-thumb">
-                    <figure>
-                      <img
-                        src="{% static 'img_about/client-slide.jpg'%}"
-                        alt=""
-                      />
-                    </figure>
-                  </div>
+                  {% endfor %}
                 </div>
                 <div class="wm-client-detail">
                   <div class="wm-client-callactiontwo">
                     <div class="wm-client-call-action">
-                      <h2>You Need Just One Consultancy</h2>
+                      <h2>{%trans 'You Need Just One Consultancy' %}</h2>
                       <p>
-                        We often need to change what people think before we try
-                        to change what they do.
+                        {% trans 'We often need to change what people think
+                        before we try to change what they do' %}.
                       </p>
                     </div>
-                    <a class="wm-callaction-contactus" href="contact-us.html"
-                      >Contact Us</a
+                    <a
+                      class="wm-callaction-contactus"
+                      href="{% url 'contact' %}"
+                      >{% trans 'Contact Us' %}</a
                     >
                   </div>
                   <ul class="wm-client-listing">
@@ -277,11 +275,11 @@
                 <div class="wm-newslatter">
                   <div class="wm-footer-title">
                     <h4>01</h4>
-                    <h2>Newsletter</h2>
+                    <h2>{% trans 'Newsletter' %}</h2>
                   </div>
                   <p>
-                    Be the first to subscribe to our newsletter and get latest
-                    news from Advisor.
+                    {% trans 'Be the first to subscribe to our newsletter and
+                    get latest news from Advisor' %}.
                   </p>
                   <form action="{% url 'subscribe' %}" method="POST">
                     {% csrf_token %}
@@ -301,15 +299,17 @@
                 <div class="wm-footer-contactinfo">
                   <div class="wm-footer-title">
                     <h4>02</h4>
-                    <h2>Contact Info</h2>
+                    <h2>{%trans 'Contact Info' %}</h2>
                   </div>
                   <ul>
                     {% for contact in contacts %}
                     <li>
-                      E-mail:
+                      {% trans 'E-mail' %}:
                       <span class="__cf_email__">{{contact.email}}</span>
                     </li>
-                    <li>Phone: <span>{{contact.phone_number}}</span></li>
+                    <li>
+                      {%trans 'Phone' %}: <span>{{contact.phone_number}}</span>
+                    </li>
                     <li>
                       Address:
                       <span class="__cf_email__">{{contact.address}}</span>
@@ -338,7 +338,6 @@
                       <p>{{logo.context}}</p>
 
                       {% endfor %}
-
                       <ul class="wm-social-links">
                         {% for facebook in facebooks %}
                         <li>
@@ -372,12 +371,26 @@
                         <h2>Useful Links</h2>
                       </div>
                       <ul>
-                        <li><a href="{% url 'home' %}">Home</a></li>
-                        <li><a href="{% url 'services' %}">Services</a></li>
-                        <li><a href="{% url 'clients' %}">Our Clients</a></li>
-                        <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'blogs' %}">News</a></li>
-                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'home' %}">{%trans 'Home'%}</a></li>
+                        <li>
+                          <a href="{% url 'services' %}"
+                            >{%trans 'Services'%}</a
+                          >
+                        </li>
+                        <li>
+                          <a href="{% url 'clients' %}"
+                            >{% trans 'Our Clients' %}</a
+                          >
+                        </li>
+                        <li>
+                          <a href="{% url 'about' %}">{%trans 'About' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'blogs' %}">{%trans 'News'%}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'contact' %}">{%trans 'Contact'%}</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -386,7 +399,7 @@
               <div class="col-md-5">
                 <div class="wm-footer-form">
                   <div class="wm-footer-widgettitle">
-                    <h2>Contact Us</h2>
+                    <h2>{%trans 'Contact Us'%}</h2>
                   </div>
                   <form action="{% url 'contact_us' %}" method="POST">
                     {% csrf_token %}
@@ -394,7 +407,8 @@
                       <li>
                         <input
                           type="text"
-                          value="Your Name"
+                          value="{% trans 'Your Name' %}"
+                          name="name"
                           onblur="if(this.value == '') { this.value ='Your Name'; }"
                           onfocus="if(this.value =='Your Name') { this.value = ''; }"
                         />
@@ -402,7 +416,8 @@
                       <li>
                         <input
                           type="text"
-                          value="Your Email"
+                          value="{% trans 'Your Email' %}"
+                          name="email"
                           onblur="if(this.value == '') { this.value ='Your Email'; }"
                           onfocus="if(this.value =='Your Email') { this.value = ''; }"
                         />
@@ -410,14 +425,22 @@
                       <li>
                         <input
                           type="text"
-                          value="Your Phone"
+                          value="{%trans 'Your Phone' %}"
+                          name="phone_number"
                           onblur="if(this.value == '') { this.value ='Your Phone'; }"
                           onfocus="if(this.value =='Your Phone') { this.value = ''; }"
                         />
                       </li>
-                      <li><textarea placeholder="Your Message"></textarea></li>
                       <li>
-                        <label><input type="submit" value="Send Now" /></label>
+                        <textarea
+                          placeholder="{% trans 'Your Message' %}"
+                          name="message"
+                        ></textarea>
+                      </li>
+                      <li>
+                        <label
+                          ><input type="submit" value="{% trans 'Send Now' %}"
+                        /></label>
                       </li>
                     </ul>
                   </form>
@@ -432,8 +455,10 @@
             <div class="row">
               <div class="col-md-12">
                 <p>
-                  © 2021, All Right Reserved - by
-                  <a href="#" class="wm-color">Company</a>
+                  © 2021, made - by
+                  <a href="https://khanbutagroup.az/" class="wm-color"
+                    >Khanbuta Group LLC</a
+                  >
                 </p>
               </div>
             </div>

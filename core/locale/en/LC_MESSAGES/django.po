@@ -8,16 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-04 08:35+0000\n"
-"PO-Revision-Date: 2021-04-19 10:39+0000\n"
-"Last-Translator: b'  <admin@admin.com>'\n"
+"POT-Creation-Date: 2021-05-04 07:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.6\n"
 
 #: core/settings.py:137
 msgid "Azerbaijani"
@@ -36,198 +35,191 @@ msgstr ""
 #: templates/contact/index.html:130 templates/contact/index.html:648
 #: templates/home/index.html:107 templates/home/index.html:544
 #: templates/news/index.html:137 templates/news/index.html:581
-#: templates/news/news_template.html:130 templates/news/news_template.html:275
+#: templates/news/news_template.html:132 templates/news/news_template.html:277
 #: templates/services/index.html:141 templates/services/index.html:529
 #: templates/services/service_template.html:103
 #: templates/services/service_template.html:260
 msgid "Home"
-msgstr "Ana Səhifə"
+msgstr ""
 
 #: templates/about/index.html:108 templates/about/index.html:278
 #: templates/about/our-clients.html:139 templates/about/our-clients.html:341
 #: templates/contact/index.html:132 templates/contact/index.html:649
 #: templates/home/index.html:109 templates/home/index.html:545
 #: templates/news/index.html:139 templates/news/index.html:582
-#: templates/news/news_template.html:132 templates/news/news_template.html:276
+#: templates/news/news_template.html:134 templates/news/news_template.html:278
 #: templates/services/index.html:143 templates/services/index.html:530
 #: templates/services/service_template.html:105
 #: templates/services/service_template.html:261
 msgid "Services"
-msgstr "Xidmətlərimiz"
+msgstr ""
 
 #: templates/about/index.html:110 templates/about/index.html:279
 #: templates/about/our-clients.html:141 templates/about/our-clients.html:342
 #: templates/contact/index.html:134 templates/contact/index.html:650
 #: templates/home/index.html:111 templates/home/index.html:546
 #: templates/news/index.html:141 templates/news/index.html:583
-#: templates/news/news_template.html:134 templates/news/news_template.html:277
+#: templates/news/news_template.html:136 templates/news/news_template.html:279
 #: templates/services/index.html:145 templates/services/index.html:531
 #: templates/services/service_template.html:107
 #: templates/services/service_template.html:262
 msgid "Our Clients"
-msgstr "Müştərilərimiz"
+msgstr ""
 
 #: templates/about/index.html:112 templates/about/index.html:280
 #: templates/about/our-clients.html:143 templates/about/our-clients.html:343
 #: templates/contact/index.html:136 templates/contact/index.html:651
 #: templates/home/index.html:113 templates/home/index.html:547
 #: templates/news/index.html:143 templates/news/index.html:584
-#: templates/news/news_template.html:136 templates/news/news_template.html:278
+#: templates/news/news_template.html:138 templates/news/news_template.html:280
 #: templates/services/index.html:147 templates/services/index.html:532
 #: templates/services/service_template.html:109
 #: templates/services/service_template.html:263
 msgid "About"
-msgstr "Haqqımızda"
+msgstr ""
 
 #: templates/about/index.html:114 templates/about/index.html:281
 #: templates/about/our-clients.html:145 templates/about/our-clients.html:344
 #: templates/contact/index.html:138 templates/contact/index.html:652
 #: templates/home/index.html:115 templates/home/index.html:548
 #: templates/news/index.html:145 templates/news/index.html:585
-#: templates/news/news_template.html:138 templates/news/news_template.html:279
+#: templates/news/news_template.html:140 templates/news/news_template.html:281
 #: templates/services/index.html:149 templates/services/index.html:533
 #: templates/services/service_template.html:111
 #: templates/services/service_template.html:264
 msgid "News"
-msgstr "Xəbərlər"
+msgstr ""
 
 #: templates/about/index.html:116 templates/about/index.html:282
 #: templates/about/our-clients.html:147 templates/about/our-clients.html:345
 #: templates/contact/index.html:140 templates/contact/index.html:653
 #: templates/home/index.html:117 templates/home/index.html:549
 #: templates/news/index.html:147 templates/news/index.html:586
-#: templates/news/news_template.html:140 templates/news/news_template.html:280
+#: templates/news/news_template.html:142 templates/news/news_template.html:282
 #: templates/services/index.html:151 templates/services/index.html:534
 #: templates/services/service_template.html:113
 #: templates/services/service_template.html:265
 msgid "Contact"
-msgstr "Əlaqə"
+msgstr ""
 
 #: templates/about/index.html:139
 msgid "About Us"
-msgstr "Haqqımızda"
+msgstr ""
 
 #: templates/about/index.html:209 templates/about/our-clients.html:272
 #: templates/contact/index.html:580 templates/home/index.html:476
-#: templates/news/index.html:513 templates/news/news_template.html:207
+#: templates/news/index.html:513 templates/news/news_template.html:209
 #: templates/services/index.html:461
 #: templates/services/service_template.html:192
 msgid "Newsletter"
-msgstr "Abunə"
+msgstr ""
 
 #: templates/about/index.html:211 templates/about/our-clients.html:274
 #: templates/contact/index.html:582 templates/home/index.html:478
-#: templates/news/index.html:515 templates/news/news_template.html:209
+#: templates/news/index.html:515 templates/news/news_template.html:211
 #: templates/services/index.html:463
 #: templates/services/service_template.html:194
-msgid ""
-"Be the first to subscribe to our newsletter and get latest news from Advisor"
-msgstr "Yeniliklərdən xəbərdar olmaq üçün abunə olun"
+msgid "Be the first to subscribe to our newsletter and get latest news from Advisor"
+msgstr "Subscribe to stay up to date"
 
 #: templates/about/index.html:224 templates/about/our-clients.html:287
 #: templates/contact/index.html:595 templates/home/index.html:491
-#: templates/news/index.html:528 templates/news/news_template.html:222
+#: templates/news/index.html:528 templates/news/news_template.html:224
 #: templates/services/index.html:476
 #: templates/services/service_template.html:207
 msgid "Contact Info"
-msgstr "Əlaqə"
+msgstr ""
 
 #: templates/about/index.html:228 templates/about/our-clients.html:291
 #: templates/contact/index.html:599 templates/home/index.html:495
-#: templates/news/index.html:532 templates/news/news_template.html:226
+#: templates/news/index.html:532 templates/news/news_template.html:228
 #: templates/services/index.html:480
 #: templates/services/service_template.html:211
 msgid "E-mail"
-msgstr "Poçt ünvanı"
+msgstr ""
 
 #: templates/about/index.html:229 templates/about/our-clients.html:292
 #: templates/contact/index.html:600 templates/home/index.html:496
-#: templates/news/index.html:533 templates/news/news_template.html:227
+#: templates/news/index.html:533 templates/news/news_template.html:229
 #: templates/services/index.html:481
 #: templates/services/service_template.html:212
 msgid "Phone"
-msgstr "Tel"
+msgstr ""
 
 #: templates/about/index.html:290 templates/about/our-clients.html:232
 #: templates/about/our-clients.html:353 templates/contact/index.html:661
 #: templates/home/index.html:557 templates/news/index.html:594
-#: templates/news/news_template.html:288 templates/services/index.html:542
+#: templates/news/news_template.html:290 templates/services/index.html:542
 #: templates/services/service_template.html:273
 msgid "Contact Us"
-msgstr "Əlaqə saxlayın"
+msgstr ""
 
 #: templates/about/index.html:294 templates/about/our-clients.html:357
 #: templates/contact/index.html:665 templates/home/index.html:561
-#: templates/news/index.html:598 templates/news/news_template.html:292
+#: templates/news/index.html:598 templates/news/news_template.html:294
 #: templates/services/index.html:546
 #: templates/services/service_template.html:277
 msgid "Your Name"
-msgstr "Adınız"
+msgstr ""
 
 #: templates/about/index.html:295 templates/about/our-clients.html:358
 #: templates/contact/index.html:666 templates/home/index.html:562
-#: templates/news/index.html:599 templates/news/news_template.html:293
+#: templates/news/index.html:599 templates/news/news_template.html:295
 #: templates/services/index.html:547
 #: templates/services/service_template.html:278
 msgid "Your Email"
-msgstr "Poçt ünvanınız"
+msgstr ""
 
 #: templates/about/index.html:296 templates/about/our-clients.html:359
 #: templates/contact/index.html:667 templates/home/index.html:563
-#: templates/news/index.html:600 templates/news/news_template.html:294
+#: templates/news/index.html:600 templates/news/news_template.html:296
 #: templates/services/index.html:548
 #: templates/services/service_template.html:279
 msgid "Your Phone"
-msgstr "Telefon nömrəniz"
+msgstr ""
 
 #: templates/about/index.html:297 templates/about/our-clients.html:360
 #: templates/contact/index.html:668 templates/home/index.html:564
-#: templates/news/index.html:601 templates/news/news_template.html:295
+#: templates/news/index.html:601 templates/news/news_template.html:297
 #: templates/services/index.html:549
 #: templates/services/service_template.html:280
 msgid "Your Message"
-msgstr "İsmarıc"
+msgstr ""
 
 #: templates/about/index.html:298 templates/about/our-clients.html:361
 #: templates/contact/index.html:669 templates/home/index.html:565
-#: templates/news/index.html:602 templates/news/news_template.html:296
+#: templates/news/index.html:602 templates/news/news_template.html:298
 #: templates/services/index.html:550
 #: templates/services/service_template.html:281
 msgid "Send Now"
-msgstr "İndi göndər"
+msgstr ""
 
 #: templates/about/our-clients.html:226
 msgid "You Need Just One Consultancy"
-msgstr "Bizə müraciət üçün əlaqə saxlayın"
+msgstr ""
 
 #: templates/about/our-clients.html:228
 msgid ""
 "We often need to change what people think before we try to change what they "
 "do"
-msgstr "Bizim xidmətlərdən yararlanaraq biznesinizə mühüm dəstək olun"
+msgstr ""
 
 #: templates/home/index.html:171
 msgid "Your business can get smarter."
-msgstr "Yüksək keyfiyyətli xidmətlər"
+msgstr ""
 
 #: templates/home/index.html:175
 msgid "Request a free consultation today!"
-msgstr "Xidmətlərimizdən yaralanmaq üçün müraciət edin"
-
-#: templates/home/index.html:177
-#, fuzzy
-#| msgid "Request a free consultation today!"
-msgid "Request Consultation"
-msgstr "əlaqə"
+msgstr ""
 
 #: templates/home/index.html:229
 msgid "We are experienced management professionals"
-msgstr "Ən son xəbərlər"
+msgstr ""
 
 #: templates/home/index.html:414
 msgid "10,000 Reasons"
-msgstr "10,000 Səbəb"
+msgstr ""
 
 #: templates/home/index.html:415
 msgid "to choose us"
-msgstr "bizi seçməyə"
+msgstr ""

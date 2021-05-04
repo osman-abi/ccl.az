@@ -4,9 +4,9 @@ from django.db import models
 
 
 class ContactInfo(models.Model):
-    email = models.EmailField()
-    phone_number = models.CharField(max_length=50, verbose_name='Əlaqə nömrəsi')
-    address = models.CharField(max_length=300, verbose_name='Ünvan')
+    email = models.EmailField(verbose_name="poçt ünvanı")
+    phone_number = models.CharField(max_length=50, verbose_name='əlaqə nömrəsi')
+    address = models.CharField(max_length=300, verbose_name='ünvan')
 
     class Meta:
         verbose_name_plural = 'Kontakt Info'
@@ -35,7 +35,7 @@ class ChooseUs(models.Model):
         return self.context
 
 class SubscribedUsers(models.Model):
-    email = models.EmailField()
+    email = models.EmailField(verbose_name="poçt ünvanı")
     class Meta:
         verbose_name_plural = 'Yeniliklerden xeberdar olmaq isteyenler'
     def __str__(self):

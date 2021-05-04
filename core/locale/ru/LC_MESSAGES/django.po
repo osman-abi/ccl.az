@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-19 11:27+0000\n"
+"POT-Creation-Date: 2021-05-04 08:35+0000\n"
 "PO-Revision-Date: 2021-04-19 11:24+0000\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,52 +21,217 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.6\n"
 
-#: core/settings.py:128
+#: core/settings.py:137
 msgid "Azerbaijani"
 msgstr ""
 
-#: core/settings.py:129
+#: core/settings.py:138
 msgid "Russian"
 msgstr ""
 
-#: core/settings.py:130
+#: core/settings.py:139
 msgid "English"
 msgstr ""
 
-#: core/urls.py:32
-msgid "haqqimizda/"
-msgstr ""
-
-#: core/urls.py:33
-msgid "contact/"
-msgstr ""
-
-#: core/urls.py:34
-msgid "news/"
-msgstr ""
-
-#: core/urls.py:35
-msgid "services/"
-msgstr ""
-
-#: core/urls.py:36
-msgid "clients/"
-msgstr ""
-
-#: templates/about/index.html:118
-msgid "About Us"
-msgstr "asdasdas"
-
-#: templates/contact/index.html:82 templates/home/index.html:96
-#: templates/news/news_template.html:78
-#: templates/services/service_template.html:78
+#: templates/about/index.html:106 templates/about/index.html:277
+#: templates/about/our-clients.html:137 templates/about/our-clients.html:340
+#: templates/contact/index.html:130 templates/contact/index.html:648
+#: templates/home/index.html:107 templates/home/index.html:544
+#: templates/news/index.html:137 templates/news/index.html:581
+#: templates/news/news_template.html:130 templates/news/news_template.html:275
+#: templates/services/index.html:141 templates/services/index.html:529
+#: templates/services/service_template.html:103
+#: templates/services/service_template.html:260
 msgid "Home"
 msgstr "дома"
 
-#: templates/home/index.html:98
+#: templates/about/index.html:108 templates/about/index.html:278
+#: templates/about/our-clients.html:139 templates/about/our-clients.html:341
+#: templates/contact/index.html:132 templates/contact/index.html:649
+#: templates/home/index.html:109 templates/home/index.html:545
+#: templates/news/index.html:139 templates/news/index.html:582
+#: templates/news/news_template.html:132 templates/news/news_template.html:276
+#: templates/services/index.html:143 templates/services/index.html:530
+#: templates/services/service_template.html:105
+#: templates/services/service_template.html:261
 msgid "Services"
-msgstr "asadsad"
+msgstr "Услуги"
 
-#: templates/home/index.html:224
+#: templates/about/index.html:110 templates/about/index.html:279
+#: templates/about/our-clients.html:141 templates/about/our-clients.html:342
+#: templates/contact/index.html:134 templates/contact/index.html:650
+#: templates/home/index.html:111 templates/home/index.html:546
+#: templates/news/index.html:141 templates/news/index.html:583
+#: templates/news/news_template.html:134 templates/news/news_template.html:277
+#: templates/services/index.html:145 templates/services/index.html:531
+#: templates/services/service_template.html:107
+#: templates/services/service_template.html:262
+msgid "Our Clients"
+msgstr "Наши клиенты"
+
+#: templates/about/index.html:112 templates/about/index.html:280
+#: templates/about/our-clients.html:143 templates/about/our-clients.html:343
+#: templates/contact/index.html:136 templates/contact/index.html:651
+#: templates/home/index.html:113 templates/home/index.html:547
+#: templates/news/index.html:143 templates/news/index.html:584
+#: templates/news/news_template.html:136 templates/news/news_template.html:278
+#: templates/services/index.html:147 templates/services/index.html:532
+#: templates/services/service_template.html:109
+#: templates/services/service_template.html:263
+#, fuzzy
+#| msgid "About Us"
+msgid "About"
+msgstr "о нас"
+
+#: templates/about/index.html:114 templates/about/index.html:281
+#: templates/about/our-clients.html:145 templates/about/our-clients.html:344
+#: templates/contact/index.html:138 templates/contact/index.html:652
+#: templates/home/index.html:115 templates/home/index.html:548
+#: templates/news/index.html:145 templates/news/index.html:585
+#: templates/news/news_template.html:138 templates/news/news_template.html:279
+#: templates/services/index.html:149 templates/services/index.html:533
+#: templates/services/service_template.html:111
+#: templates/services/service_template.html:264
+msgid "News"
+msgstr "Новости"
+
+#: templates/about/index.html:116 templates/about/index.html:282
+#: templates/about/our-clients.html:147 templates/about/our-clients.html:345
+#: templates/contact/index.html:140 templates/contact/index.html:653
+#: templates/home/index.html:117 templates/home/index.html:549
+#: templates/news/index.html:147 templates/news/index.html:586
+#: templates/news/news_template.html:140 templates/news/news_template.html:280
+#: templates/services/index.html:151 templates/services/index.html:534
+#: templates/services/service_template.html:113
+#: templates/services/service_template.html:265
+msgid "Contact"
+msgstr "Kонтакт"
+
+#: templates/about/index.html:139
+msgid "About Us"
+msgstr "O нас"
+
+#: templates/about/index.html:209 templates/about/our-clients.html:272
+#: templates/contact/index.html:580 templates/home/index.html:476
+#: templates/news/index.html:513 templates/news/news_template.html:207
+#: templates/services/index.html:461
+#: templates/services/service_template.html:192
+msgid "Newsletter"
+msgstr "Подписаться"
+
+#: templates/about/index.html:211 templates/about/our-clients.html:274
+#: templates/contact/index.html:582 templates/home/index.html:478
+#: templates/news/index.html:515 templates/news/news_template.html:209
+#: templates/services/index.html:463
+#: templates/services/service_template.html:194
+msgid ""
+"Be the first to subscribe to our newsletter and get latest news from Advisor"
+msgstr "Подпишитесь, чтобы оставаться в курсе"
+
+#: templates/about/index.html:224 templates/about/our-clients.html:287
+#: templates/contact/index.html:595 templates/home/index.html:491
+#: templates/news/index.html:528 templates/news/news_template.html:222
+#: templates/services/index.html:476
+#: templates/services/service_template.html:207
+msgid "Contact Info"
+msgstr "Контактная информация"
+
+#: templates/about/index.html:228 templates/about/our-clients.html:291
+#: templates/contact/index.html:599 templates/home/index.html:495
+#: templates/news/index.html:532 templates/news/news_template.html:226
+#: templates/services/index.html:480
+#: templates/services/service_template.html:211
+msgid "E-mail"
+msgstr "Электронная почта"
+
+#: templates/about/index.html:229 templates/about/our-clients.html:292
+#: templates/contact/index.html:600 templates/home/index.html:496
+#: templates/news/index.html:533 templates/news/news_template.html:227
+#: templates/services/index.html:481
+#: templates/services/service_template.html:212
+msgid "Phone"
+msgstr "Телефон"
+
+#: templates/about/index.html:290 templates/about/our-clients.html:232
+#: templates/about/our-clients.html:353 templates/contact/index.html:661
+#: templates/home/index.html:557 templates/news/index.html:594
+#: templates/news/news_template.html:288 templates/services/index.html:542
+#: templates/services/service_template.html:273
+msgid "Contact Us"
+msgstr "Свяжитесь с нами"
+
+#: templates/about/index.html:294 templates/about/our-clients.html:357
+#: templates/contact/index.html:665 templates/home/index.html:561
+#: templates/news/index.html:598 templates/news/news_template.html:292
+#: templates/services/index.html:546
+#: templates/services/service_template.html:277
+msgid "Your Name"
+msgstr "Твое имя"
+
+#: templates/about/index.html:295 templates/about/our-clients.html:358
+#: templates/contact/index.html:666 templates/home/index.html:562
+#: templates/news/index.html:599 templates/news/news_template.html:293
+#: templates/services/index.html:547
+#: templates/services/service_template.html:278
+msgid "Your Email"
+msgstr "Ваш электронной почты"
+
+#: templates/about/index.html:296 templates/about/our-clients.html:359
+#: templates/contact/index.html:667 templates/home/index.html:563
+#: templates/news/index.html:600 templates/news/news_template.html:294
+#: templates/services/index.html:548
+#: templates/services/service_template.html:279
+msgid "Your Phone"
+msgstr "Ваш телефон"
+
+#: templates/about/index.html:297 templates/about/our-clients.html:360
+#: templates/contact/index.html:668 templates/home/index.html:564
+#: templates/news/index.html:601 templates/news/news_template.html:295
+#: templates/services/index.html:549
+#: templates/services/service_template.html:280
+msgid "Your Message"
+msgstr "Ваше сообщение"
+
+#: templates/about/index.html:298 templates/about/our-clients.html:361
+#: templates/contact/index.html:669 templates/home/index.html:565
+#: templates/news/index.html:602 templates/news/news_template.html:296
+#: templates/services/index.html:550
+#: templates/services/service_template.html:281
+msgid "Send Now"
+msgstr "Отправить сейчас"
+
+#: templates/about/our-clients.html:226
+msgid "You Need Just One Consultancy"
+msgstr "Свяжитесь с нами, чтобы связаться с нами"
+
+#: templates/about/our-clients.html:228
+msgid ""
+"We often need to change what people think before we try to change what they "
+"do"
+msgstr "Внесите значительный вклад в свой бизнес, используя наши услуги "
+
+#: templates/home/index.html:171
 msgid "Your business can get smarter."
-msgstr "Ваш бизнес может стать умнее."
+msgstr "Качественные услуги"
+
+#: templates/home/index.html:175
+msgid "Request a free consultation today!"
+msgstr "Свяжитесь с нашими службами, чтобы получить травму"
+
+#: templates/home/index.html:177
+#, fuzzy
+#| msgid "Request a free consultation today!"
+msgid "Request Consultation"
+msgstr "Kонтакт"
+
+#: templates/home/index.html:229
+msgid "We are experienced management professionals"
+msgstr "Последние новости"
+
+#: templates/home/index.html:414
+msgid "10,000 Reasons"
+msgstr "10,000 причина"
+
+#: templates/home/index.html:415
+msgid "to choose us"
+msgstr "выбрать нас"

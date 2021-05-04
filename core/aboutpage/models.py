@@ -2,9 +2,9 @@ from django.db import models
 
 # Create your models here.
 class About(models.Model):
-    about_image = models.ImageField(upload_to='about/')
-    about_title = models.CharField(max_length=100)
-    about_context = models.TextField()
+    about_image = models.ImageField(upload_to='about/', verbose_name="şəkil seçin")
+    about_title = models.CharField(max_length=100, verbose_name="başlıq")
+    about_context = models.TextField(verbose_name="ətraflı məlumat")
 
     class Meta:
         verbose_name_plural = 'Haqqimizda'

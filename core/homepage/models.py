@@ -5,7 +5,7 @@ from django.db import models
 
 
 class Logo(models.Model):
-    image = models.ImageField(upload_to='logo/')
+    image = models.ImageField(upload_to='logo/', verbose_name="logo şəkli seçin")
     context = models.TextField(blank=True,null=True, verbose_name='qisa mezmun')
     class Meta:
         verbose_name_plural = 'Logo'
@@ -27,18 +27,24 @@ class Slide(models.Model):
 
    
 class Support(models.Model):
-    title = models.CharField(max_length=150)
-    description = models.CharField(max_length=500)
-    context = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to='support/')
+    title = models.CharField(max_length=150, verbose_name="başlıq")
+    description = models.CharField(max_length=500, verbose_name="qısa məlumat")
+    context = models.TextField(blank=True, null=True, verbose_name="ətraflı məlumat")
+    image = models.ImageField(upload_to='support/', verbose_name="şəkil")
+
+    class Meta:
+        verbose_name_plural = 'Dəstəyimiz'
 
     def __str__(self):
         return self.title
 
 
 class Statistica(models.Model):
-    count = models.IntegerField(blank=True, null=True)
-    title = models.CharField(max_length=100)
+    count = models.IntegerField(blank=True, null=True, verbose_name="say")
+    title = models.CharField(max_length=100, verbose_name="başlıq")
+
+    class Meta:
+        verbose_name_plural = "Statistika"
 
     def __str__(self):
         return self.title

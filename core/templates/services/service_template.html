@@ -104,13 +104,13 @@
   </li>
   <li class="menu-item"><a href="{% url 'services' %}">{% trans "Services" %}</a>
   </li>
-  <li class="menu-item"><a href="{% url 'clients' %}">Our Clients</a>
+  <li class="menu-item"><a href="{% url 'clients' %}">{% trans 'Our Clients' %}</a>
   </li>
-  <li class="menu-item"><a href="{% url 'about' %}">About</a>
+  <li class="menu-item"><a href="{% url 'about' %}">{%trans 'About' %}</a>
   </li>
-  <li class="menu-item"><a href="{% url 'blogs' %}">News</a>
+  <li class="menu-item"><a href="{% url 'blogs' %}">{%trans 'News' %}</a>
   </li>
-  <li class="menu-item"><a href="{% url 'contact' %}">Contact</a>
+  <li class="menu-item"><a href="{% url 'contact' %}">{% trans 'Contact' %}</a>
 </li>
 
 </ul>
@@ -182,103 +182,123 @@
 
       <footer id="wm-footer" class="wm-footer-one">
 
-        <div class="wm-footer-topsec">
-        <div class="container">
-        <div class="row">
-        <div class="col-md-6">
-        <div class="wm-newslatter">
-        <div class="wm-footer-title">
-        <h4>01</h4>
-        <h2>Newsletter</h2>
-        </div>
-        <p>Be the first to subscribe to our newsletter and get latest news from Advisor.</p>
-        <form>
-        <input type="text" value="E-mail Address" onblur="if(this.value == '') { this.value ='E-mail Address'; }" onfocus="if(this.value =='E-mail Address') { this.value = ''; }">
-        <div class="clearfix"></div>
-        <label><input type="submit" value="Subscribe"></label>
-        </form>
-        </div>
-        </div>
-        <div class="col-md-6">
-        <div class="wm-footer-contactinfo">
-        <div class="wm-footer-title">
-        <h4>02</h4>
-        <h2>Contact Info</h2>
-        </div>
-        <ul>
-        <li>E-mail: <a href="/cdn-cgi/l/email-protection#b1dfd0dcd4f1d4dcd0d8dd9fd2dedc"><span class="__cf_email__" data-cfemail="e78e898188a78683918e94889594929797889593c984888a">[email&#160;protected]</span></a></li>
-        <li>Phone: <span>(012) 345-6789</span></li>
-        <li>Address: <a href="/cdn-cgi/l/email-protection#3e505f535b7e5b535f5752105d5153"><span class="__cf_email__" data-cfemail="2b42454d446b4a4f5d42584459585e5b5b44595f05484446">[email&#160;protected]</span></a></li>
-        </ul>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        
-        <div class="wm-footer-bottomsec">
-        <span class="wm-footer-transparent"></span>
-        <div class="container">
-        <div class="row">
-        <div class="col-md-7">
-        <div class="wm-footer-widget-area">
-        <div class="row">
-        <div class="col-md-8 widget wm_about_widget">
-        <a href="#" class="wm-footer-logo"><img src="/img/logo-1.png" alt=""></a>
-        <p>Advisor is one of the world’s leading management consulting companies, one which combines classic management consulting with expertise.</p>
-        <ul class="wm-social-links">
-        <li><a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-        <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-        <li><a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i> Youtube</a></li>
-        <li><a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
-        </ul>
-        </div>
-        <div class="col-md-4 widget widget_archive">
-        <div class="wm-footer-widgettitle"> <h2>Useful Links</h2> </div>
-        <ul>
-        <li><a href="#">Company History</a></li>
-        <li><a href="#">Our Approach</a></li>
-        <li><a href="#">Partners</a></li>
-        <li><a href="#">Our Team</a></li>
-        <li><a href="#">Case Studies</a></li>
-        <li><a href="#">Testimonials</a></li>
-        <li><a href="#">Careers</a></li>
-        </ul>
-        </div>
-        </div>
-        </div>
-        </div>
-        <div class="col-md-5">
-        <div class="wm-footer-form">
-        <div class="wm-footer-widgettitle"> <h2>Contact Us</h2> </div>
-        <form>
-        <ul>
-        <li><input type="text" value="Your Name" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
-        <li><input type="text" value="Your Email" onblur="if(this.value == '') { this.value ='Your Email'; }" onfocus="if(this.value =='Your Email') { this.value = ''; }"></li>
-        <li><input type="text" value="Your Phone" onblur="if(this.value == '') { this.value ='Your Phone'; }" onfocus="if(this.value =='Your Phone') { this.value = ''; }"></li>
-        <li><textarea placeholder="Your Message"></textarea></li>
-        <li><label><input type="submit" value="Send Now"></label></li>
-        </ul>
-        </form>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        
-        <div class="wm-copyright-section">
-        <div class="container">
-        <div class="row">
-        <div class="col-md-12">
-        <p>© 2021, All Right Reserved - by <a href="#" class="wm-color">Company</a></p>
-        </div>
-        </div>
-        </div>
-        </div>
-        
-        </footer>
+<div class="wm-footer-topsec">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<div class="wm-newslatter">
+<div class="wm-footer-title">
+<h4>01</h4>
+<h2>{% trans 'Newsletter' %}</h2>
+</div>
+<p>{% trans 'Be the first to subscribe to our newsletter and get latest news from Advisor' %}.</p>
+<form action="{% url 'subscribe' %}" method="POST">
+  {% csrf_token %}
+<input type="text" value="E-mail Address" name='email' onblur="if(this.value == '') { this.value ='E-mail Address'; }" onfocus="if(this.value =='E-mail Address') { this.value = ''; }">
+<div class="clearfix"></div>
+<label><input type="submit" value="Subscribe"></label>
+</form>
+</div>
+</div>
+<div class="col-md-6">
+<div class="wm-footer-contactinfo">
+<div class="wm-footer-title">
+<h4>02</h4>
+<h2>{%trans 'Contact Info' %}</h2>
+</div>
+<ul>
+  {% for contact in contacts %}
+  <li>{% trans 'E-mail' %}: <span class="__cf_email__">{{contact.email}}</span></li>
+  <li>{%trans 'Phone' %}: <span>{{contact.phone_number}}</span></li>
+  <li>Address: <span class="__cf_email__">{{contact.address}}</span></li>
+
+  {% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="wm-footer-bottomsec">
+<span class="wm-footer-transparent"></span>
+<div class="container">
+<div class="row">
+<div class="col-md-7">
+<div class="wm-footer-widget-area">
+<div class="row">
+<div class="col-md-8 widget wm_about_widget">
+  {% for logo in logos %}
+  <a href="{% url 'home' %}" class="wm-footer-logo"><img src="{{logo.image.url}}" alt=""></a>
+  <p>{{logo.context}}</p>
+
+  {% endfor %}
+<ul class="wm-social-links">
+  {% for facebook in facebooks %}
+  <li><a href="{{facebook.facebook_link}}" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+  {% endfor %}
+
+  {% for instagram in instagrams %}
+  <li><a href="{{instagram.instagram_link}}" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+  {% endfor %}
+
+  {% for whatsapp in whatsapps %}
+  <li><a href="{{whatsapp.whatsapp_link}}" target="_blank"><i class="fab fa-whatsapp"></i> Whasapp</a></li>
+  {% endfor %}
+
+  {% for linkedin in linkedins %}
+  <li><a href="{{linkedin.linkedin_link}}" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+  {% endfor %}
+
+
+</ul>
+</div>
+<div class="col-md-4 widget widget_archive">
+<div class="wm-footer-widgettitle"> <h2>Useful Links</h2> </div>
+<ul>
+<li><a href="{% url 'home' %}">{%trans 'Home'%}</a></li>
+<li><a href="{% url 'services' %}">{%trans 'Services'%}</a></li>
+<li><a href="{% url 'clients' %}">{% trans 'Our Clients' %}</a></li>
+<li><a href="{% url 'about' %}">{%trans 'About' %}</a></li>
+<li><a href="{% url 'blogs' %}">{%trans 'News'%}</a></li>
+<li><a href="{% url 'contact' %}">{%trans 'Contact'%}</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-5">
+<div class="wm-footer-form">
+<div class="wm-footer-widgettitle"> <h2>{%trans 'Contact Us'%}</h2> </div>
+<form action="{% url 'contact_us' %}" method="POST">
+  {% csrf_token %}
+<ul>
+<li><input type="text" value="{% trans 'Your Name' %}" name="name" onblur="if(this.value == '') { this.value ='Your Name'; }" onfocus="if(this.value =='Your Name') { this.value = ''; }"></li>
+<li><input type="text" value="{% trans 'Your Email' %}" name="email" onblur="if(this.value == '') { this.value ='Your Email'; }" onfocus="if(this.value =='Your Email') { this.value = ''; }"></li>
+<li><input type="text" value="{%trans 'Your Phone' %}" name='phone_number' onblur="if(this.value == '') { this.value ='Your Phone'; }" onfocus="if(this.value =='Your Phone') { this.value = ''; }"></li>
+<li><textarea placeholder="{% trans 'Your Message' %}" name="message"></textarea></li>
+<li><label><input type="submit" value="{% trans 'Send Now' %}"></label></li>
+</ul>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="wm-copyright-section">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<p>© 2021, made - by <a href="https://khanbutagroup.az/" class="wm-color">Khanbuta Group LLC</a></p>
+</div>
+</div>
+</div>
+</div>
+
+</footer>
 
       <div class="clearfix"></div>
     </div>

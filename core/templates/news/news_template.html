@@ -80,10 +80,6 @@
                       </li>
                       {% endfor %}
                     </ul>
-
-                    {# #} {# <input type="submit" value="{{lang.code}}" {% if
-                    lang.code == LANGUAGE_CODE %} disabled {% endif %}
-                    name="language"/>#} {# {% endfor %}#}
                   </li>
                 </ul>
               </div>
@@ -137,16 +133,20 @@
                           >
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'clients' %}">Our Clients</a>
+                          <a href="{% url 'clients' %}"
+                            >{% trans 'Our Clients' %}</a
+                          >
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'about' %}">About</a>
+                          <a href="{% url 'about' %}">{%trans 'About' %}</a>
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'blogs' %}">News</a>
+                          <a href="{% url 'blogs' %}">{%trans 'News' %}</a>
                         </li>
                         <li class="menu-item">
-                          <a href="{% url 'contact' %}">Contact</a>
+                          <a href="{% url 'contact' %}"
+                            >{% trans 'Contact' %}</a
+                          >
                         </li>
                       </ul>
                     </div>
@@ -180,62 +180,21 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="wm-blog-single">
-                  <h2>
-                    Master File Loader - New Product For Efficient Data
-                    Migration
-                  </h2>
+                  <h2>{{ blog.title}}</h2>
                   <ul class="wm-blog-post-option">
                     <li>
                       <i class="fa fa-calendar" aria-hidden="true"></i>
-                      <time datetime="2008-02-14 20:00">22/03/2016</time>
-                    </li>
-                    <li>
-                      by
-                      <i> Author </i>
-                    </li>
-                    <li>
-                      in
-                      <i> Theme </i>
+                      <time datetime="2008-02-14 20:00"
+                        >{{ blog.publish_date }}</time
+                      >
                     </li>
                   </ul>
                   <figure class="wm-detail-thumb">
-                    <img src="extra-images/blog-single-post.jpg" alt="" />
+                    <img src="{{ blog.image.url }}" alt="" />
                   </figure>
                 </div>
                 <div class="wm-detail-editore">
-                  <p>
-                    On February 6, 2016, Bernardo M. Ferdman, Ph.D. was
-                    recognized as a new Fellow of the of Consulting Psychology
-                    (SCP) at its Midwinter Conference in Lake Buena Vista,
-                    Florida.
-                  </p>
-                  <p>
-                    SCP, Division 13 of the American Psychological Association
-                    (APA), brings together psychologists who “share a commitment
-                    to apply psychological insights for the success and
-                    fulfillment of individuals, groups, and organizations.”
-                    Fellow status is “an honor bestowed upon APA members who
-                    have shown evidence of unusual and outstanding contributions
-                    or performance in the field of psychology.”
-                  </p>
-                  <ul class="wm-blog-info">
-                    <li>
-                      <i class="flaticon-arrows-1"></i> Focus on those firms and
-                      individuals across the British Isles,
-                    </li>
-                    <li>
-                      <i class="flaticon-arrows-1"></i> Regardless of size, age,
-                      specialism or value, that are not just successful
-                    </li>
-                    <li>
-                      <i class="flaticon-arrows-1"></i> How we view and regard
-                      their entire industry and who, taking their place firmly
-                    </li>
-                    <li>
-                      <i class="flaticon-arrows-1"></i> Become a byword for
-                      forward-thinking excellence and achievement
-                    </li>
-                  </ul>
+                  <p>{{ blog.blog_context }}</p>
                 </div>
               </div>
             </div>
@@ -251,16 +210,18 @@
                 <div class="wm-newslatter">
                   <div class="wm-footer-title">
                     <h4>01</h4>
-                    <h2>Newsletter</h2>
+                    <h2>{% trans 'Newsletter' %}</h2>
                   </div>
                   <p>
-                    Be the first to subscribe to our newsletter and get latest
-                    news from Advisor.
+                    {% trans 'Be the first to subscribe to our newsletter and
+                    get latest news from Advisor' %}.
                   </p>
-                  <form>
+                  <form action="{% url 'subscribe' %}" method="POST">
+                    {% csrf_token %}
                     <input
                       type="text"
                       value="E-mail Address"
+                      name="email"
                       onblur="if(this.value == '') { this.value ='E-mail Address'; }"
                       onfocus="if(this.value =='E-mail Address') { this.value = ''; }"
                     />
@@ -273,32 +234,23 @@
                 <div class="wm-footer-contactinfo">
                   <div class="wm-footer-title">
                     <h4>02</h4>
-                    <h2>Contact Info</h2>
+                    <h2>{%trans 'Contact Info' %}</h2>
                   </div>
                   <ul>
+                    {% for contact in contacts %}
                     <li>
-                      E-mail:
-                      <a
-                        href="/cdn-cgi/l/email-protection#b1dfd0dcd4f1d4dcd0d8dd9fd2dedc"
-                        ><span
-                          class="__cf_email__"
-                          data-cfemail="e78e898188a78683918e94889594929797889593c984888a"
-                          >[email&#160;protected]</span
-                        ></a
-                      >
+                      {% trans 'E-mail' %}:
+                      <span class="__cf_email__">{{contact.email}}</span>
                     </li>
-                    <li>Phone: <span>(012) 345-6789</span></li>
+                    <li>
+                      {%trans 'Phone' %}: <span>{{contact.phone_number}}</span>
+                    </li>
                     <li>
                       Address:
-                      <a
-                        href="/cdn-cgi/l/email-protection#3e505f535b7e5b535f5752105d5153"
-                        ><span
-                          class="__cf_email__"
-                          data-cfemail="2b42454d446b4a4f5d42584459585e5b5b44595f05484446"
-                          >[email&#160;protected]</span
-                        ></a
-                      >
+                      <span class="__cf_email__">{{contact.address}}</span>
                     </li>
+
+                    {% endfor %}
                   </ul>
                 </div>
               </div>
@@ -314,35 +266,39 @@
                 <div class="wm-footer-widget-area">
                   <div class="row">
                     <div class="col-md-8 widget wm_about_widget">
-                      <a href="#" class="wm-footer-logo"
-                        ><img src="/img/logo-1.png" alt=""
+                      {% for logo in logos %}
+                      <a href="{% url 'home' %}" class="wm-footer-logo"
+                        ><img src="{{logo.image.url}}" alt=""
                       /></a>
-                      <p>
-                        Advisor is one of the world’s leading management
-                        consulting companies, one which combines classic
-                        management consulting with expertise.
-                      </p>
+                      <p>{{logo.context}}</p>
+
+                      {% endfor %}
                       <ul class="wm-social-links">
+                        {% for facebook in facebooks %}
                         <li>
-                          <a href="#" target="_blank"
+                          <a href="{{facebook.facebook_link}}" target="_blank"
                             ><i class="fab fa-facebook"></i> Facebook</a
                           >
                         </li>
+                        {% endfor %} {% for instagram in instagrams %}
                         <li>
-                          <a href="https://twitter.com/" target="_blank"
-                            ><i class="fab fa-twitter"></i> Twitter</a
+                          <a href="{{instagram.instagram_link}}" target="_blank"
+                            ><i class="fab fa-instagram"></i> Instagram</a
                           >
                         </li>
+                        {% endfor %} {% for whatsapp in whatsapps %}
                         <li>
-                          <a href="https://youtube.com/" target="_blank"
-                            ><i class="fab fa-youtube"></i> Youtube</a
+                          <a href="{{whatsapp.whatsapp_link}}" target="_blank"
+                            ><i class="fab fa-whatsapp"></i> Whasapp</a
                           >
                         </li>
+                        {% endfor %} {% for linkedin in linkedins %}
                         <li>
-                          <a href="https://www.linkedin.com/" target="_blank"
+                          <a href="{{linkedin.linkedin_link}}" target="_blank"
                             ><i class="fab fa-linkedin"></i> Linkedin</a
                           >
                         </li>
+                        {% endfor %}
                       </ul>
                     </div>
                     <div class="col-md-4 widget widget_archive">
@@ -350,13 +306,26 @@
                         <h2>Useful Links</h2>
                       </div>
                       <ul>
-                        <li><a href="#">Company History</a></li>
-                        <li><a href="#">Our Approach</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Testimonials</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="{% url 'home' %}">{%trans 'Home'%}</a></li>
+                        <li>
+                          <a href="{% url 'services' %}"
+                            >{%trans 'Services'%}</a
+                          >
+                        </li>
+                        <li>
+                          <a href="{% url 'clients' %}"
+                            >{% trans 'Our Clients' %}</a
+                          >
+                        </li>
+                        <li>
+                          <a href="{% url 'about' %}">{%trans 'About' %}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'blogs' %}">{%trans 'News'%}</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'contact' %}">{%trans 'Contact'%}</a>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -364,13 +333,17 @@
               </div>
               <div class="col-md-5">
                 <div class="wm-footer-form">
-                  <div class="wm-footer-widgettitle"><h2>Contact Us</h2></div>
-                  <form>
+                  <div class="wm-footer-widgettitle">
+                    <h2>{%trans 'Contact Us'%}</h2>
+                  </div>
+                  <form action="{% url 'contact_us' %}" method="POST">
+                    {% csrf_token %}
                     <ul>
                       <li>
                         <input
                           type="text"
-                          value="Your Name"
+                          value="{% trans 'Your Name' %}"
+                          name="name"
                           onblur="if(this.value == '') { this.value ='Your Name'; }"
                           onfocus="if(this.value =='Your Name') { this.value = ''; }"
                         />
@@ -378,7 +351,8 @@
                       <li>
                         <input
                           type="text"
-                          value="Your Email"
+                          value="{% trans 'Your Email' %}"
+                          name="email"
                           onblur="if(this.value == '') { this.value ='Your Email'; }"
                           onfocus="if(this.value =='Your Email') { this.value = ''; }"
                         />
@@ -386,14 +360,22 @@
                       <li>
                         <input
                           type="text"
-                          value="Your Phone"
+                          value="{%trans 'Your Phone' %}"
+                          name="phone_number"
                           onblur="if(this.value == '') { this.value ='Your Phone'; }"
                           onfocus="if(this.value =='Your Phone') { this.value = ''; }"
                         />
                       </li>
-                      <li><textarea placeholder="Your Message"></textarea></li>
                       <li>
-                        <label><input type="submit" value="Send Now" /></label>
+                        <textarea
+                          placeholder="{% trans 'Your Message' %}"
+                          name="message"
+                        ></textarea>
+                      </li>
+                      <li>
+                        <label
+                          ><input type="submit" value="{% trans 'Send Now' %}"
+                        /></label>
                       </li>
                     </ul>
                   </form>
@@ -408,8 +390,10 @@
             <div class="row">
               <div class="col-md-12">
                 <p>
-                  © 2021, All Right Reserved - by
-                  <a href="#" class="wm-color">Company</a>
+                  © 2021, made - by
+                  <a href="https://khanbutagroup.az/" class="wm-color"
+                    >Khanbuta Group LLC</a
+                  >
                 </p>
               </div>
             </div>
