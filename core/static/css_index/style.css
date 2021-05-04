@@ -4780,7 +4780,7 @@ li.active a {
 }
 
 .navbar-nav li a:hover:not(.fa) {
-  letter-spacing: 4px;
+  letter-spacing: normal !important;
 }
 .wm-footer-bottomsec li,
 .wm-footer-bottomsec a {
