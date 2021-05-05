@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Our Clients</title>
+    <title>{%trans 'Contact'%}</title>
 
     <link href="{% static 'css_contact/bootstrap.css' %}" rel="stylesheet" />
     <link href="{% static 'css_contact/font-awesome.css' %}" rel="stylesheet" />
@@ -61,11 +61,8 @@
                     <span>{{contact.phone_number}}</span>
                   </li>
                   {% endfor %}
-                  <li>
-                    <i class="flaticon-nation"></i>
-                    <a id="langCURRENT" href="#"
-                      >English <i class="fa fa-angle-down"></i
-                    ></a>
+                  {% get_current_language as LANGUAGE_CODE %}
+   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">{{ LANGUAGE_CODE }} <i class="fa fa-angle-down"></i></a>
                     <ul class="wm-language-popup">
                       {% get_current_language as LANGUAGE_CODE %} {%
                       get_available_languages as LANGUAGES %} {%
@@ -156,8 +153,8 @@
             <div class="col-md-12">
               <div class="wm-breadcrumb">
                 <ul>
-                  <li><a href="//127.0.0.1:5500/index.html">Home</a></li>
-                  <li>Contact Us</li>
+                  <li><a href="//127.0.0.1:5500/index.html">{% trans 'Home'%}</a></li>
+                  <li>{% trans 'Contact Us' %}</li>
                 </ul>
               </div>
             </div>
@@ -189,7 +186,7 @@
                                 'Open Sans', 'Helvetica Neue', sans-serif;
                             "
                           >
-                            Send a Message
+                              {% trans 'Send a Message' %}
                           </h3>
                         </div>
                         <form>
@@ -230,37 +227,32 @@
                               <textarea placeholder="Message"></textarea>
                             </li>
                             <li>
-                              <input type="submit" value="Send Message" />
+                              <input type="submit" value="{% trans 'Send Message'%}" />
                             </li>
                           </ul>
                         </form>
                       </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="profile">
-                      <h2>4306 Rancho Cucamonga, CA 91701</h2>
+                    {% for contact in contacts %}
+                      <div role="tabpanel" class="tab-pane" id="profile">
+                      <h2>{{ contact.address}}</h2>
                       <div class="wm-avenue-contact">
                         <ul>
                           <li>
-                            <h6>Email</h6>
-                            <a
-                              href="/cdn-cgi/l/email-protection#224c434f4762474f434b4e0c414d4f"
-                              ><span
-                                class="__cf_email__"
-                                data-cfemail="187b77766c797b6c797c6e716b776a5871767e77367b7775"
-                                >[email&#160;protected]</span
-                              ></a
-                            >
+                            <h6>{% trans 'Email' %}</h6>
+
+                              <a href=""> {{ contact.email }} </a>
                           </li>
                           <li>
-                            <h6>Phone</h6>
+                            <h6>{% trans 'Phone' %}</h6>
                             <a
                               href="/cdn-cgi/l/email-protection#d4bab5b9b194b1b9b5bdb8fab7bbb9"
-                              >(012) 345-6789</a
+                              >{{ contact.phone_number}}</a
                             >
                           </li>
                           <li>
                             <div class="wm-social-list">
-                              <h6>We're Social</h6>
+                              <h6>{% trans "We're Social" %}</h6>
                               <ul>
                                 <li>
                                   <a href="http://facebok.com/" target="_blank"
@@ -269,22 +261,17 @@
                                 </li>
                                 <li>
                                   <a href="https://twitter.com/" target="_blank"
-                                    ><i class="fa fa-twitter"></i
+                                    ><i class="fa fa-whatsapp"></i
                                   ></a>
                                 </li>
                                 <li>
                                   <a href="https://youtube.com/" target="_blank"
-                                    ><i class="fa fa-youtube"></i
+                                    ><i class="fa fa-instagram"></i
                                   ></a>
                                 </li>
                                 <li>
                                   <a href="https://www.flickr.com/"
-                                    ><i class="fa fa-flickr"></i
-                                  ></a>
-                                </li>
-                                <li>
-                                  <a href="https://vimeo.com/"
-                                    ><i class="fa fa-vimeo"></i
+                                    ><i class="fa fa-linkedin"></i
                                   ></a>
                                 </li>
                               </ul>
@@ -294,7 +281,7 @@
                       </div>
                       <div class="contact-form">
                         <div class="contact-form-heading">
-                          <h3>Send a Message</h3>
+                          <h3>{% trans  'Send a Message' %}</h3>
                         </div>
                         <form>
                           <ul>
@@ -340,226 +327,7 @@
                         </form>
                       </div>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="messages">
-                      <h2>4925 Huntington Station, NY 11746</h2>
-                      <div class="wm-avenue-contact">
-                        <ul>
-                          <li>
-                            <h6>Email</h6>
-                            <a
-                              href="/cdn-cgi/l/email-protection#c5aba4a8a085a0a8a4aca9eba6aaa8"
-                              ><span
-                                class="__cf_email__"
-                                data-cfemail="8ae9e5e4feebe9feebeefce3f9e5f8cae3e4ece5a4e9e5e7"
-                                >[email&#160;protected]</span
-                              ></a
-                            >
-                          </li>
-                          <li>
-                            <h6>Phone</h6>
-                            <a
-                              href="/cdn-cgi/l/email-protection#7b151a161e3b1e161a121755181416"
-                              >(012) 345-6789</a
-                            >
-                          </li>
-                          <li>
-                            <div class="wm-social-list">
-                              <h6>We're Social</h6>
-                              <ul>
-                                <li>
-                                  <a href="http://facebok.com/" target="_blank"
-                                    ><i class="fa fa-facebook"></i> Facebook</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="https://twitter.com/" target="_blank"
-                                    ><i class="fa fa-twitter"></i> Twitter</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="https://youtube.com/" target="_blank"
-                                    ><i class="fa fa-youtube"></i> Youtube</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="https://www.flickr.com/"
-                                    ><i
-                                      class="fa fa-flickr"
-                                      aria-hidden="true"
-                                    ></i
-                                  ></a>
-                                </li>
-                                <li>
-                                  <a href="https://vimeo.com/"
-                                    ><i
-                                      class="fa fa-vimeo"
-                                      aria-hidden="true"
-                                    ></i
-                                  ></a>
-                                </li>
-                              </ul>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="contact-form">
-                        <div class="contact-form-heading">
-                          <h3>Send a Message</h3>
-                        </div>
-                        <form>
-                          <ul>
-                            <li>
-                              <input
-                                type="text"
-                                value="First Name"
-                                onblur="if(this.value == '') { this.value ='First Name'; }"
-                                onfocus="if(this.value =='First Name') { this.value = ''; }"
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="text"
-                                value="Last Name"
-                                onblur="if(this.value == '') { this.value ='Last Name'; }"
-                                onfocus="if(this.value =='Last Name') { this.value = ''; }"
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="text"
-                                value="E-mail"
-                                onblur="if(this.value == '') { this.value ='E-mail'; }"
-                                onfocus="if(this.value =='E-mail') { this.value = ''; }"
-                              />
-                            </li>
-                            <li class="full-input">
-                              <input
-                                type="text"
-                                value="Subject"
-                                onblur="if(this.value == '') { this.value ='Subject'; }"
-                                onfocus="if(this.value =='Subject') { this.value = ''; }"
-                              />
-                            </li>
-                            <li class="full-input">
-                              <textarea placeholder="Message"></textarea>
-                            </li>
-                            <li>
-                              <input type="submit" value="Send Message" />
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="settings">
-                      <h2>5466 Palm Beach Gardens, FL 33410</h2>
-                      <div class="wm-avenue-contact">
-                        <ul>
-                          <li>
-                            <h6>Email</h6>
-                            <a
-                              href="/cdn-cgi/l/email-protection#85ebe4e8e0c5e0e8e4ece9abe6eae8"
-                              ><span
-                                class="__cf_email__"
-                                data-cfemail="f0939f9e8491938491948699839f82b0999e969fde939f9d"
-                                >[email&#160;protected]</span
-                              ></a
-                            >
-                          </li>
-                          <li>
-                            <h6>Phone</h6>
-                            <a
-                              href="/cdn-cgi/l/email-protection#cda3aca0a88da8a0aca4a1e3aea2a0"
-                              >(012) 345-6789</a
-                            >
-                          </li>
-                          <li>
-                            <div class="wm-social-list">
-                              <h6>We're Social</h6>
-                              <ul>
-                                <li>
-                                  <a href="http://facebok.com/" target="_blank"
-                                    ><i class="fa fa-facebook"></i> Facebook</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="https://twitter.com/" target="_blank"
-                                    ><i class="fa fa-twitter"></i> Twitter</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="https://youtube.com/" target="_blank"
-                                    ><i class="fa fa-youtube"></i> Youtube</a
-                                  >
-                                </li>
-                                <li>
-                                  <a href="https://www.flickr.com/"
-                                    ><i
-                                      class="fa fa-flickr"
-                                      aria-hidden="true"
-                                    ></i
-                                  ></a>
-                                </li>
-                                <li>
-                                  <a href="https://vimeo.com/"
-                                    ><i
-                                      class="fa fa-vimeo"
-                                      aria-hidden="true"
-                                    ></i
-                                  ></a>
-                                </li>
-                              </ul>
-                            </div>
-                          </li>
-                        </ul>
-                      </div>
-                      <div class="contact-form">
-                        <div class="contact-form-heading">
-                          <h3>Send a Message</h3>
-                        </div>
-                        <form>
-                          <ul>
-                            <li>
-                              <input
-                                type="text"
-                                value="First Name"
-                                onblur="if(this.value == '') { this.value ='First Name'; }"
-                                onfocus="if(this.value =='First Name') { this.value = ''; }"
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="text"
-                                value="Last Name"
-                                onblur="if(this.value == '') { this.value ='Last Name'; }"
-                                onfocus="if(this.value =='Last Name') { this.value = ''; }"
-                              />
-                            </li>
-                            <li>
-                              <input
-                                type="text"
-                                value="E-mail"
-                                onblur="if(this.value == '') { this.value ='E-mail'; }"
-                                onfocus="if(this.value =='E-mail') { this.value = ''; }"
-                              />
-                            </li>
-                            <li class="full-input">
-                              <input
-                                type="text"
-                                value="Subject"
-                                onblur="if(this.value == '') { this.value ='Subject'; }"
-                                onfocus="if(this.value =='Subject') { this.value = ''; }"
-                              />
-                            </li>
-                            <li class="full-input">
-                              <textarea placeholder="Message"></textarea>
-                            </li>
-                            <li>
-                              <input type="submit" value="Send Message" />
-                            </li>
-                          </ul>
-                        </form>
-                      </div>
-                    </div>
+                  {% endfor %}
                   </div>
                 </div>
               </div>
@@ -576,7 +344,6 @@
 <div class="col-md-6">
 <div class="wm-newslatter">
 <div class="wm-footer-title">
-<h4>01</h4>
 <h2>{% trans 'Newsletter' %}</h2>
 </div>
 <p>{% trans 'Be the first to subscribe to our newsletter and get latest news from Advisor' %}.</p>
@@ -584,14 +351,13 @@
   {% csrf_token %}
 <input type="text" value="E-mail Address" name='email' onblur="if(this.value == '') { this.value ='E-mail Address'; }" onfocus="if(this.value =='E-mail Address') { this.value = ''; }">
 <div class="clearfix"></div>
-<label><input type="submit" value="Subscribe"></label>
+<label><input type="submit" value="{% trans 'Subscribe' %}"></label>
 </form>
 </div>
 </div>
 <div class="col-md-6">
 <div class="wm-footer-contactinfo">
 <div class="wm-footer-title">
-<h4>02</h4>
 <h2>{%trans 'Contact Info' %}</h2>
 </div>
 <ul>
@@ -643,7 +409,7 @@
 </ul>
 </div>
 <div class="col-md-4 widget widget_archive">
-<div class="wm-footer-widgettitle"> <h2>Useful Links</h2> </div>
+<div class="wm-footer-widgettitle"> <h2>{% trans 'Useful Links' %}</h2> </div>
 <ul>
 <li><a href="{% url 'home' %}">{%trans 'Home'%}</a></li>
 <li><a href="{% url 'services' %}">{%trans 'Services'%}</a></li>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Our Clients</title>
+    <title>{% trans 'News' %}</title>
 
     <link href="{% static 'css_news/bootstrap.css' %}" rel="stylesheet" />
     <link href="{% static 'css_news/font-awesome.css' %}" rel="stylesheet" />
@@ -61,11 +61,8 @@
                     <span>{{contact.phone_number}}</span>
                   </li>
                   {% endfor %}
-                  <li>
-                    <i class="flaticon-nation"></i>
-                    <a id="langCURRENT" href="#"
-                      >English <i class="fa fa-angle-down"></i
-                    ></a>
+                  {% get_current_language as LANGUAGE_CODE %}
+   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">{{ LANGUAGE_CODE }} <i class="fa fa-angle-down"></i></a>
                     <ul class="wm-language-popup">
                       {% get_current_language as LANGUAGE_CODE %} {%
                       get_available_languages as LANGUAGES %} {%
@@ -164,9 +161,9 @@
             <div class="col-md-12">
               <div class="wm-breadcrumb">
                 <ul>
-                  <li><a href="//127.0.0.1:5500/index.html">Home</a></li>
-                  <li><a href="../news/">News</a></li>
-                  <li>News Template</li>
+                  <li><a href="//127.0.0.1:5500/index.html">{% trans 'Home'%}</a></li>
+
+                  <li>{{ blog.title}}</li>
                 </ul>
               </div>
             </div>
@@ -209,7 +206,6 @@
               <div class="col-md-6">
                 <div class="wm-newslatter">
                   <div class="wm-footer-title">
-                    <h4>01</h4>
                     <h2>{% trans 'Newsletter' %}</h2>
                   </div>
                   <p>
@@ -233,7 +229,6 @@
               <div class="col-md-6">
                 <div class="wm-footer-contactinfo">
                   <div class="wm-footer-title">
-                    <h4>02</h4>
                     <h2>{%trans 'Contact Info' %}</h2>
                   </div>
                   <ul>
@@ -303,7 +298,7 @@
                     </div>
                     <div class="col-md-4 widget widget_archive">
                       <div class="wm-footer-widgettitle">
-                        <h2>Useful Links</h2>
+                        <h2>{% trans 'Useful Links' %}</h2>
                       </div>
                       <ul>
                         <li><a href="{% url 'home' %}">{%trans 'Home'%}</a></li>

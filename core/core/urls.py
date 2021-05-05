@@ -30,10 +30,10 @@ urlpatterns += i18n_patterns(
     path('4dm1n/', admin.site.urls),
     path('', include('homepage.urls')),
     path('haqqimizda/', include('aboutpage.urls')),
-    path('contact/', include('contactpage.urls')),
-    path('news/', include('newspage.urls')),
-    path('services/', include('servicepage.urls')),
-    path('clients/', include('ourclientpage.urls')),
+    path('elaqe/', include('contactpage.urls')),
+    path('yenilikler/', include('newspage.urls')),
+    path('xidmetler/', include('servicepage.urls')),
+    path('musteriler/', include('ourclientpage.urls')),
     prefix_default_language=True,
 )
 

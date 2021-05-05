@@ -8,7 +8,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>⠀</title>
+<title> {% trans 'Home' %}⠀</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
   integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
@@ -49,7 +49,8 @@
   <li><i class="fa fa-map-marker-alt"></i> <span>{{contact.address}}</span></li>
   <li><i class="flaticon-technology"></i> <span>{{contact.phone_number}}</span></li>
   {% endfor %}
-   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">English <i class="fa fa-angle-down"></i></a>
+  {% get_current_language as LANGUAGE_CODE %}
+   <li><i class="flaticon-nation"></i> <a id="langCURRENT" href="#">{{ LANGUAGE_CODE }} <i class="fa fa-angle-down"></i></a>
                   <ul class="wm-language-popup">
                     {% get_current_language as LANGUAGE_CODE %}
                     {% get_available_languages as LANGUAGES %}
@@ -472,7 +473,6 @@ Read More
 <div class="col-md-6">
 <div class="wm-newslatter">
 <div class="wm-footer-title">
-<h4>01</h4>
 <h2>{% trans 'Newsletter' %}</h2>
 </div>
 <p>{% trans 'Be the first to subscribe to our newsletter and get latest news from Advisor' %}.</p>
@@ -487,7 +487,6 @@ Read More
 <div class="col-md-6">
 <div class="wm-footer-contactinfo">
 <div class="wm-footer-title">
-<h4>02</h4>
 <h2>{%trans 'Contact Info' %}</h2>
 </div>
 <ul>
@@ -539,7 +538,7 @@ Read More
 </ul>
 </div>
 <div class="col-md-4 widget widget_archive">
-<div class="wm-footer-widgettitle"> <h2>Useful Links</h2> </div>
+<div class="wm-footer-widgettitle"> <h2>{% trans 'Useful Links' %}</h2> </div>
 <ul>
 <li><a href="{% url 'home' %}">{%trans 'Home'%}</a></li>
 <li><a href="{% url 'services' %}">{%trans 'Services'%}</a></li>
